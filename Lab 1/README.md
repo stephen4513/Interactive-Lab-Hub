@@ -152,7 +152,7 @@ another acts with it — this is how you make the device feel alive without
 building any real electronics. (Zoom works well for recording; you can pin the
 video feed of whichever scene you want to capture.)
 
-**Include your first attempts at recording the wizarded set-up here.**
+https://drive.google.com/file/d/13IAeMe62rTRmMoC-m6Uzyf560Eq2zaxy/view?usp=sharing 
 
 ## Part E. (optional) Costume the Device
 
@@ -174,7 +174,7 @@ and calm for a bedroom?
 the top of this lab: a viewer who knows the piece should recognize it; a viewer
 who doesn't should come away understanding what it's famous for. How might you illustrate the non-sequential aspects of the interaction in the sketch?
 
-**Include your video here.**
+https://drive.google.com/file/d/1UX6GY23HQ5D9u3mbFNeJj2RStdjFqxea/view?usp=sharing 
 
 **Please indicate who you collaborated with on this lab.** Be generous in
 acknowledging their contributions, and credit any other influences (YouTube,
