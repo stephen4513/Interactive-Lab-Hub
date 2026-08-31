@@ -226,9 +226,22 @@ and the people around it. If you're new to storyboarding, read
 
 <img width="623" height="283" alt="{04908BF1-7E12-4117-9923-FBFC0CF16FB0}" src="https://github.com/user-attachments/assets/90a26156-fb98-468f-8fdb-159aa916200b" />
 
+**Storyboard 2 — Lightsaber duel**
+
+<img width="744" height="310" alt="{D34AABB9-8961-4B1E-AC21-A17EE7BA963D}" src="https://github.com/user-attachments/assets/d4585344-cba0-485c-8d48-283e3dadf458" />
+
+**Storyboard 3 — Deflecting a blaster shot**
+
+<img width="733" height="305" alt="{8CDCB71F-DA29-4757-AE75-D75C5507B4CE}" src="https://github.com/user-attachments/assets/cb30f1cc-c0cd-47b6-8b24-0ab6c7921ab7" />
+
+
 Use the storyboards to decide what interaction to prototype.
 
 **Summarize the feedback you got here.**
+
+We ended up going with storyboard 1 after feedback as it captures the power and information of
+the light and the wielder with only one lightsaber and wielder. It'll need two people and just one
+lightsaber. It should be much easier to actually design the scene, act in the scene, and record.
 
 ## Part B. Act out the Interaction
 
@@ -238,10 +251,41 @@ it aloud.
 
 **Are there things that seemed better on paper than when acted out?**
 
+In reality, we had to leave a little bit of light so the actual hilt was visible and so the
+audience can see that there are two players in front of each other. Also, each player's
+facial expression in reality had to be exaggerated a bit to understand the reaction to the
+iconic weapon. We had to also bring the players much closer because our lights weren't
+as powerful and directed as the storyboard shows.
+
 **Did new ideas about the piece surface once you were on your feet?**
+
+An idea that surged while recording was that instead of having the Jedi start the scene
+with the lightsaber in hand, it would be better to have the Jedi start with the lightsaber in
+his belt. This improves the quality of the scene since the witness can have a stronger
+reaction
 
 **Are there key moments in the interaction where things could go in a different direction?**
 Iterate your storyboards to capture key non-sequential aspects of the interaction. 
+
+Yes, the meaning of the scene is based on the reaction of the witness, both
+facial expression and actions, and to a lesser extent the facial expression of the wielder.
+If they back up with a scared look, it makes it look like the Jedi is about to attack or
+threaten the witness. However if they smile, that might indicate that the Jedi is
+protecting or saving the witness. If the reaction is a look of curiosity and maybe moving
+closer to look at it, that shows that they are friendly to each other and are likely not in
+the middle of a conflict where one needs to be protected or attacked. Another key
+moment that could have gone in a different direction is if the color when the lightsaber
+ignites was red instead of blue, that would potentially invert all the reactions of each
+scene. Another key moment where things might have gone differently is if the wielder
+was surprised at the blade when he ignited it, showing that maybe he is learning or
+using/seeing it for the first time in front of the witness.
+
+The first three panels are identical in every version; the interaction forks at the moment of ignition. The witness turns out to be a
+Sith, the bystander runs away, or the witness has no reaction at all.
+
+<img width="862" height="897" alt="{FD1BAA65-381D-4691-8E04-BFADB02F0190}" src="https://github.com/user-attachments/assets/dba07df3-8401-4ca5-a2cd-132409ac1b20" />
+
+
 
 ## Part C. Prototype the Light (light first!)
 
@@ -259,6 +303,8 @@ masterwork should you consider layering in a second modality (sound, vibration,
 motion). If in doubt, keep polishing the light. The other modalities are next
 week's business.
 
+We used the Tinkerbelle controller to control the colors of the lightsaber. So it starts off as black (turned off), then turns into a quick flash of white light as it turns blue when ignited. 
+
 ## Part D. Wizard the Device
 
 Set up a "wizard" arrangement so one person can secretly drive the light while
@@ -266,6 +312,7 @@ another acts with it — this is how you make the device feel alive without
 building any real electronics. (Zoom works well for recording; you can pin the
 video feed of whichever scene you want to capture.)
 
+**Include your first attempts at recording the wizarded set-up here.**
 https://drive.google.com/file/d/13IAeMe62rTRmMoC-m6Uzyf560Eq2zaxy/view?usp=sharing 
 
 ## Part E. (optional) Costume the Device
@@ -292,6 +339,11 @@ https://drive.google.com/file/d/1UX6GY23HQ5D9u3mbFNeJj2RStdjFqxea/view?usp=shari
 
 **Please indicate who you collaborated with on this lab.** Be generous in
 acknowledging their contributions, and credit any other influences (YouTube,
+Github, Twitter, a friend who lent you a lamp) that informed your recreation.
+
+I collaborated with Ammar Syed on this lab, we did everything side by side with our ideas. We used claude code to setup tinkerbel and to make the storyboard we used notability. 
+
+Be generous in acknowledging their contributions, and credit any other influences (YouTube,
 Github, Twitter, a friend who lent you a lamp) that informed your recreation.
 
 ---
