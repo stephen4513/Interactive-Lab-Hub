@@ -4,9 +4,8 @@ _This project is to be done in teams of 2._
 
 **Stephen Monahan & Ammar Syed**
 
-**THE MASTERWORK YOU DREW FROM THE HAT:**
-Lightsaber 
----
+**THE MASTERWORK YOU DREW FROM THE HAT:** The lightsaber — *Star Wars* (1977).
+_"Identity and threat carried in a blade of light and hum."_
 
 One way to understand greatness is to look to the greats. Just as painters learn
 the technique and artistry of the old masters by recreating their paintings, so
@@ -92,6 +91,79 @@ the interaction*:
 **Describe your masterwork here, in your own words. What is the core interaction
 someone would recognize it by?**
 
+The lightsaber is the signature weapon of force sensitive users in the Star Wars saga, a
+collection of movies and tv shows created by George Lucas, first introduced in the movie
+Star Wars: A New Hope (1977). The lightsaber is essentially a metal hilt which projects a blade
+of light, essentially a laser, that is of a particular color and hums when it is on. It can be used
+to cut, fight, deflect other sabers and blaster shots.
+
+In the fantasy, a lightsaber essentially has a power cell that sends raw energy upwards, this
+passes through a Kyber Crystal which determines the color of the light, amplifies it, and
+transforms the energy into an actual blade. The amplified energy enters an emitter which
+converts the light into superheated plasma. It is focused and stabilized by a ring that projects a
+magnetic field that keeps the plasma bound in a 4 feet long straight line upwards from the hilt.
+
+In terms of the actual production in the original movie, the hilts were made of junk, specifically
+random parts from a camera shop parts bin as well as random gun and jet engine parts. The
+blade was just a spinning rod covered in reflective tape. Artists added visual effects and added
+in the light glow frame by frame in the movie after being used in the shoot. The hum is from the blending of the low pitched mechanical hum from an idle film projector's motor and that of a
+high pitched buzz of a tv picture tube. To make swoosh noises for when the saber is moving,
+they used the doppler effect and basically recorded the blended noise with a mic as the mic was
+moving away from the speaker.
+
+**The core interaction:** When a lightsaber is ignited, the color lets people know what type of
+person is holding it as well as what event is likely about to happen, generally something
+threatening in nature. The interaction could be using the saber to fight another saber wielder,
+deflect bullets, cut through walls, invoke fear, or training among other things.
+
+Some vocabulary related to the light of the lightsaber:
+
+- **Color:** The color gives information about the identity of the user and where their
+  allegiance is. Red is associated with the sith and Blue is associated with the Jedi,
+  generally correlated with a sense of evil and good respectively. In future movies and tv
+  shows there are other colors that are associated with Jedi as well as more ambiguous or
+  neutral parties.
+- **Hum:** This noise lets everyone know a weapon is activated and likely is a threat and
+  about to be used. Also hints at the intent of the person.
+- **Ignition:** The act of igniting (turning on) shows the intention that the saber is about to be
+  used for something and hints to the intent of a person. Turning off shows disarming.
+- **Blade motion and fluctuating pitches:** Similar to hum and ignition, it shows the intent of
+  the person more directly and how they are using the saber in action.
+- **Flash on clash / blade lock / saber clash:** When two light sabers clash they both flash
+  white when making contact and can't break past each other and essentially push against
+  each other like two physical metal rods. Something similar happens when it is used to
+  deflect blaster shots.
+- **Light bouncing / spill / interactive lighting:** The light of a saber emitting and showing on the
+  surrounding people, walls, and elements shows involvement and who might be affected.
+
+The main wielders for this object are called Jedi and Sith; they use it as a weapon for combat
+and defense. The person holding the lightsaber controls it by their hand movement. During a
+fight, another person acts as the opponent and reacts to the lightsaber by blocking, dodging,
+attacking, or moving away. There may also be non-wielders around, and the wielder with their
+lightsaber may be a form of protection or terror depending on the color and allegiance of the
+wielder and the allegiance of the bystander. In terms of the movies, the audience is watching all
+of these interactions from outside of the scene and the lights give insights immediately and
+quicker than actual dialogue.
+
+The lightsaber is famous in many fights such as Obi Wan and Vader, especially their fight in a
+corridor on the Death Star. It's also very famous for when Luke is first given the blade and
+ignites it as well as when he is training on the Falcon. It is iconic in many other fights and
+scenes throughout the series as well.
+
+**Strengths.** The strength of the lightsaber in the movie is that it can cut through thick metals, deflect
+blasters, is portable and can retract and ignite on the whim of the user, is a dangerous weapon
+that can be used to hurt but also protect and defend. It is a very prominent weapon with a
+distinctive light and noise which draws attention and invokes emotion and actions from those
+around.
+
+**Weaknesses.** Weaknesses of the lightsaber are that it is a short distance weapon and can't be used at long
+distances unless thrown. Another weakness is that if the metal hilt gets damaged or destroyed
+the whole saber would turn off and stop working. Other weaknesses are that the light attributes
+the user to a particular allegiance and morality, even if the user has elements of various
+allegiance or is morally gray. Another weakness is that it is very distinctive and gives away your
+location and likely allegiance and causes those around to act in a certain way depending on the
+color and wielder.
+
 ## Part A. Plan
 
 For your masterwork, reconstruct the interaction as a scene:
@@ -104,6 +176,44 @@ For your masterwork, reconstruct the interaction as a scene:
 - **Goals:** What is each player trying to do?
 
 **Describe your setting, players, activity, and goals here.**
+### Storyboard 1: Activating a lightsaber
+
+- **Setting:** inside a dark spaceship corridor, just enough light to see two people and
+  the metal hilt of an off lightsaber
+- **Players:** the main user activating the lightsaber (jedi), holding a lightsaber. A
+  witness is a few feet away, standing and watching him.
+- **Activity:** The main user/jedi holds the inactive lightsaber, presses a button with
+  their thumb, and the lightsaber turns on, lighting the room and his face and the
+  area around him with a blue glow. The witness looks at him surprised.
+- **Goals:** The jedi is trying to activate his lightsaber to show the other person. The
+  witness is curious and watches to know perhaps what color it will be.
+
+### Storyboard 2: Lightsaber duel
+
+- **Setting:** a spaceship's hallway, dark
+- **Players:** A jedi and a sith
+- **Activity:** Both players face off against each other with hilts down and sabers
+  inactive, their faces are smiling. Next they both ignite their own saber and each of
+  their saber's color emanates around themselves and the area with a neutral gap
+  between them as their faces begin to frown. Then they close together and the
+  blades clash, the colors mix into a purple hue glow and the blades glow white
+  after contact, while each of their faces show both colors layered.
+- **Goals:** Each wants to see what color the other persons saber is and based on
+  that fight if they are opposing sides, and ideally win.
+
+### Storyboard 3: Deflecting a blaster shot
+
+- **Setting:** a spaceship's hallway
+- **Players:** A Jedi and a trooper
+- **Activity:** The trooper shoots at the Jedi, and the Jedi ignites his lightsaber and
+  catches the bolt, deflecting it back at the trooper's own face. The light of the
+  incoming bolt of light is red leaving the trooper, hits the blue lightsaber and there
+  are a few flashes of white and a purple glow, and then the bolt is redirected back
+  creating a red glow around the trooper face and a blue glow around the user of
+  the lightsaber.
+- **Goals:** The trooper wants to either eliminate or injure the other person by
+  shooting at a distance where he thinks he is safe, while the Jedi wants to survive
+  and eliminate the threat and win the fight.
 
 Now **sketch a 3 storyboards** of the interaction you are recreating. (The number may depend on the thing you drew, but stretch your thinking!) They
 don't need to be beautiful, but they must capture and communicate not only the behavior of the light, but how it affects
@@ -111,6 +221,10 @@ and the people around it. If you're new to storyboarding, read
 [this explanation](https://www.nngroup.com/articles/storyboards-visualize-ideas/).
 
 **Include pictures of your storyboards here.**
+
+**Storyboard 1 — Activating a lightsaber**
+
+<img width="623" height="283" alt="{04908BF1-7E12-4117-9923-FBFC0CF16FB0}" src="https://github.com/user-attachments/assets/90a26156-fb98-468f-8fdb-159aa916200b" />
 
 Use the storyboards to decide what interaction to prototype.
 
