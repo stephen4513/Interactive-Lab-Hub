@@ -361,6 +361,11 @@ wasn't clear.
 
 **Who were the other groups you kibitzed with? Add links to their project pages here.**
 **Summarize the feedback you got from your partners here.**
+Feedback from: Shifeng Hong & Arnav Whig https://github.com/mado0512/Interactive-Lab-Hub/tree/Fall2026/Lab%201 They liked the reflection on the whiteboard because it helped show the shape of the lightsaber, even though it was limited to the phone screen. However, it was hard to recognize the activity as a lightsaber experience at first because lightsabers are usually associated with a long, extended beam. They suggested adding a fight scene with swinging and blocking movements, possibly using one of the other storyboards, to make the concept clearer and better demonstrate the lightsaber’s purpose.
+
+Feedback from Ani Hadagali (ah2495) & Jonathan Tumalle (jrt285) https://github.com/anihadagali7/Interactive-Lab-Hub/tree/anihadagali7-Aug26-Lab/Lab%201 They liked how detailed and well drawn the storyboards were, especially since they clearly showed three different scenarios. They also thought the storyboards did a good job showing both the strengths and weaknesses of a lightsaber, such as its ability to cut through metal and deflect shots, as well as its limited range and tendency to reveal the user’s location and allegiance. However, it was difficult to recognize the phone as a lightsaber in the video because it lacked the iconic long beam of light. They suggested filming the second scenario with a duel, which might have made its use as a weapon more obvious. Overall, they described it as a legendary interactive light.
+
+Feedback from: Afroza Aktar & Dhanu https://github.com/rdhanushikka/Interactive-Lab-Hub/tree/Fall2026/Lab%201 They thought the storyboards looked great and communicated the product clearly. They especially liked how the characters’ expressions matched the emotions of each scene and how the lightsabers were given a glowing effect. The action in the video was understandable, and running away felt like a realistic response for an unarmed person facing a lightsaber. However, the lightsaber itself was too short to be immediately recognizable. Without already knowing what it was supposed to be, they might not have identified it as a lightsaber. They also felt that a better camera angle could have made the concept clearer.
 
 ## Remix, Update, or Critique the Master
 
@@ -382,6 +387,12 @@ your response engages with what your master was really doing.
 
 **Document everything here — especially the storyboard and video. Photos of the
 prototype are great too.**
+
+We decided to pursue option 2: 
+Video: https://drive.google.com/file/d/1-G9FCid3b6FPjuvDeIvaTVLTCuE5MY0n/view?usp=sharing
+
+Prototype photo: <img width="2160" height="2880" alt="IMG_1266" src="https://github.com/user-attachments/assets/ffac1adf-4d16-4d77-b54b-e067d10f6d2c" />
+
 
 ---
 
