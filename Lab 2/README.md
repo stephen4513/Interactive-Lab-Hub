@@ -157,7 +157,13 @@ You can look in `screen_boot_script.py` for how to display text on the screen!
 You can look in `image.py` for an example of how to display an image on the screen. Can you make it switch to another image when you push one of the buttons?
 
 \*\*\***Include a picture of your own Raspberry Pi displaying the piscreen.service with your unique MAC address. Additionally, please provide another picture showing the successful completion of the screen test.**\*\*\*
+Raspberry Pi displaying pin.screenservice:
+<img width="2160" height="2880" alt="IMG_1296" src="https://github.com/user-attachments/assets/c15ca1de-7c17-442d-a1ff-e4405c5bae19" />
 
+Screen Test(color selected is red):
+<img width="2160" height="2880" alt="IMG_1298" src="https://github.com/user-attachments/assets/89944756-7d64-44c1-b7c1-b1358156e604" />
+<img width="2160" height="2880" alt="IMG_1299" src="https://github.com/user-attachments/assets/2fc0751d-2e62-440c-9712-dc76bdca8afd" />
+<img width="2160" height="2880" alt="IMG_1297" src="https://github.com/user-attachments/assets/a700b734-01d7-4122-b5b5-bbc87dfa0c95" />
 
 ## Part D. 
 ### Set up the Display Clock Demo
@@ -183,6 +189,9 @@ Option 3. A nowadays often preferred method is to use Microsoft [VS code to remo
 
 Pro Tip: Using tools like [code-server](https://coder.com/docs/code-server/latest) you can even setup a VS Code coding environment hosted on your raspberry pi and code through a web browser on your tablet or smartphone! 
 
+<img width="2160" height="2880" alt="IMG_1300" src="https://github.com/user-attachments/assets/78f47b9b-7d8b-4608-9220-bcf053bf0c90" />
+
+
 ## Part E. Read Part 2. Sketch and brainstorm further interactions and features you would like for your clock.
 
 One potential source of ideas might be thinking about other clocks and timekeeping devices for inspiration.
@@ -193,6 +202,10 @@ We strongly discourage literal digital or analog clock display: Be creative.
 
 
 ** Insert ideas, sketches, [Verplank diagrams](https://ccrma.stanford.edu/courses/250a-fall-2004/IDSketchbok.pdf)), storyboards for your ideas **
+For my idea, I decided to create a “Time to Leave” clock that shows my next class and how many minutes remain before it starts. As it gets closer to the time I need to leave, a backpack on the screen will gradually fill up. When it is time to head out, the screen will display footsteps and a “Head out!” message, accounting for my walking time. Pressing a button will show a list of my remaining classes for the day. My goal is to make a clock that helps me prepare for class instead of simply displaying the time.
+<img width="1388" height="542" alt="IMG_0140" src="https://github.com/user-attachments/assets/4a72ec92-866f-449e-bb80-ca0efcea3553" />
+<img width="1250" height="483" alt="IMG_0138" src="https://github.com/user-attachments/assets/4d7853dd-dc60-4ae5-8667-e8c31375a6c0" />
+
 
 
 
