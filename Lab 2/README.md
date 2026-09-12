@@ -202,10 +202,10 @@ We strongly discourage literal digital or analog clock display: Be creative.
 
 
 ** Insert ideas, sketches, [Verplank diagrams](https://ccrma.stanford.edu/courses/250a-fall-2004/IDSketchbok.pdf)), storyboards for your ideas **
-For my idea, I decided to create a “Time to Leave” clock that shows my next class and how many minutes remain before it starts. As it gets closer to the time I need to leave, a backpack on the screen will gradually fill up. When it is time to head out, the screen will display footsteps and a “Head out!” message, accounting for my walking time. Pressing a button will show a list of my remaining classes for the day. My goal is to make a clock that helps me prepare for class instead of simply displaying the time.
-<img width="1388" height="542" alt="IMG_0140" src="https://github.com/user-attachments/assets/4a72ec92-866f-449e-bb80-ca0efcea3553" />
-<img width="1250" height="483" alt="IMG_0138" src="https://github.com/user-attachments/assets/4d7853dd-dc60-4ae5-8667-e8c31375a6c0" />
 
+For my idea, I decided to create a clock that shows my next class and how many minutes remain before it starts. As it gets closer to the time I need to leave, a backpack on the screen will gradually fill up. When it is time to head out, the screen will display footsteps and a “Head out!” message, accounting for my walking time. Pressing a button will show a list of my remaining classes for the day. My goal is to make a clock that helps me prepare for class instead of simply displaying the time.
+<img width="1250" height="483" alt="IMG_0138" src="https://github.com/user-attachments/assets/4d7853dd-dc60-4ae5-8667-e8c31375a6c0" />
+<img width="1388" height="542" alt="IMG_0140" src="https://github.com/user-attachments/assets/4a72ec92-866f-449e-bb80-ca0efcea3553" />
 
 
 
