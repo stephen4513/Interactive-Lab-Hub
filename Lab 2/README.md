@@ -223,6 +223,7 @@ Gal: https://github.com/ga386-hash/Interactive-Lab-Hub/blob/Fall2026/Lab%202/REA
 
 2. Look at and give feedback on the Part E. for at least 3 other people in the class and get 3 people to comment on your Part E!)
 **Put the feedback for your ideas here.**
+
 Feedback from Gal( https://github.com/ga386-hash/Interactive-Lab-Hub/blob/Fall2026/Lab%202/README.md): I think your idea is very creative. I think it’s also useful since you don't always have access to a clock/time during class, as many classes require you to keep your devices in your bag. The most difficult part of your project is probably getting the backpack to fill up correctly in its shape. I also like the part where when it is time to head out, the screen will display footsteps and a “Head out!”
 
 Feedback from Jonathan(https://github.com/jjs564-gif/Interactive-Lab-Hub/edit/Fall2026/Lab%202/README.md):
