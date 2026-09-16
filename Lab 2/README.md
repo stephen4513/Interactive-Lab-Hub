@@ -211,6 +211,9 @@ For my idea, I decided to create a clock that shows my next class and how many m
 
 
 **Put the names of the people you gave feedback to here. (Even better, add links to their repos here!)**
+Jerry: https://github.com/JJL4/Interactive-Lab-Hub/tree/Fall2026/Lab%202 
+Jonathan: https://github.com/jjs564-gif/Interactive-Lab-Hub/edit/Fall2026/Lab%202/README.md
+Gal: https://github.com/ga386-hash/Interactive-Lab-Hub/blob/Fall2026/Lab%202/README.md
 
 # Lab 2 Part 2
 
@@ -220,6 +223,12 @@ For my idea, I decided to create a clock that shows my next class and how many m
 
 2. Look at and give feedback on the Part E. for at least 3 other people in the class and get 3 people to comment on your Part E!)
 **Put the feedback for your ideas here.**
+Feedback from Gal( https://github.com/ga386-hash/Interactive-Lab-Hub/blob/Fall2026/Lab%202/README.md): I think your idea is very creative. I think it’s also useful since you don't always have access to a clock/time during class, as many classes require you to keep your devices in your bag. The most difficult part of your project is probably getting the backpack to fill up correctly in its shape. I also like the part where when it is time to head out, the screen will display footsteps and a “Head out!”
+
+Feedback from Jonathan(https://github.com/jjs564-gif/Interactive-Lab-Hub/edit/Fall2026/Lab%202/README.md):
+I like the idea of constantly displaying the time until the user’s next class because that allows them to get a feel for how much time they have to prepare or get things done. It’s also useful for people that feel like they always have more time than they do because it makes them aware of what time they’re actually able to utilize.
+
+Feedback from Ammar(https://github.com/ammarsyed/Interactive-Lab-Hub/blob/Fall2026/Lab%202/README.md): I really like that this clock is focused on something other than simply telling time, but rather on helping users be ready for the next class. The backpack being filled up shows a very clear visual representation of the user reacting to the duration on the clock. I also really like that pressing the lower button shows you the rest of the classes and how much time you have until them. I think a big improvement could be changing the color as we get closer to a class time.
 
 ## Update your Lab Hub
 
