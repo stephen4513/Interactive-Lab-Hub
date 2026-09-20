@@ -241,9 +241,15 @@ Start small, pick just one element of your overall idea, just to show you have a
 
 \*\*\***Put a copy of your code in your Lab 2 Github repo.**\*\*\*
 
+Added to dsp_countdown.py
+
 ## Make a short video of your modified barebones PiClock
 
 \*\*\***Take a video of your barely modified PiClock.**\*\*\*
+
+https://drive.google.com/file/d/1YRdDe7zJ__sVRlXetpc3_L2vo6rC4hQE/view?usp=sharing 
+
+The video shows the timer for one class which starts every Monday at 10:10am, the screen is just showing the time left and some information about the class. There is no animations or more classes added yet.
 
 After you edit and work on the scripts for Lab 2, the files should be upload back to your own GitHub repo! You can push to your personal github repo by adding the files here, commiting and pushing.
 
