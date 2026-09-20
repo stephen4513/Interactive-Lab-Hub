@@ -247,9 +247,8 @@ Added to dsp_countdown.py
 
 \*\*\***Take a video of your barely modified PiClock.**\*\*\*
 
-https://drive.google.com/file/d/1YRdDe7zJ__sVRlXetpc3_L2vo6rC4hQE/view?usp=sharing 
-
 The video shows the timer for one class which starts every Monday at 10:10am, the screen is just showing the time left and some information about the class. There is no animations or more classes added yet.
+https://drive.google.com/file/d/1YRdDe7zJ__sVRlXetpc3_L2vo6rC4hQE/view?usp=sharing 
 
 After you edit and work on the scripts for Lab 2, the files should be upload back to your own GitHub repo! You can push to your personal github repo by adding the files here, commiting and pushing.
 
