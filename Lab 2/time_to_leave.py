@@ -16,10 +16,9 @@ import argparse
 import math
 import time
 from datetime import datetime, timedelta
-from functools import lru_cache
 from zoneinfo import ZoneInfo
 
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image, ImageDraw
 
 
 # ---- Settings you can change ----
@@ -41,31 +40,83 @@ CLASSES = [
 ]
 
 WIDTH, HEIGHT = 240, 135
-BG = "#080E18"
-PANEL = "#152332"
-WHITE = "#F3F7FC"
-MUTED = "#A6B7C8"
-GREEN = "#62DCA0"
-YELLOW = "#FFD36B"
-RED = "#FF7B80"
-BLUE = "#7BC6FF"
+BG = "#F0E9D8"
+INK = "#292921"
+MUTED = "#756F60"
+RULE = "#CEC4AE"
+BAG_BASE = "#DBD0B8"
+GREEN = "#33734C"
+YELLOW = "#966018"
+RED = "#B64232"
+BLUE = "#365D78"
+
+# An original 5x7 bitmap alphabet. Drawn at whole pixel scales, with no
+# font downloads, antialiasing, or platform-specific font dependencies.
+GLYPHS = {
+    " ": "00000/00000/00000/00000/00000/00000/00000",
+    "A": "01110/10001/10001/11111/10001/10001/10001",
+    "B": "11110/10001/10001/11110/10001/10001/11110",
+    "C": "01111/10000/10000/10000/10000/10000/01111",
+    "D": "11110/10001/10001/10001/10001/10001/11110",
+    "E": "11111/10000/10000/11110/10000/10000/11111",
+    "F": "11111/10000/10000/11110/10000/10000/10000",
+    "G": "01111/10000/10000/10111/10001/10001/01111",
+    "H": "10001/10001/10001/11111/10001/10001/10001",
+    "I": "11111/00100/00100/00100/00100/00100/11111",
+    "J": "00111/00010/00010/00010/10010/10010/01100",
+    "K": "10001/10010/10100/11000/10100/10010/10001",
+    "L": "10000/10000/10000/10000/10000/10000/11111",
+    "M": "10001/11011/10101/10101/10001/10001/10001",
+    "N": "10001/11001/11001/10101/10011/10011/10001",
+    "O": "01110/10001/10001/10001/10001/10001/01110",
+    "P": "11110/10001/10001/11110/10000/10000/10000",
+    "Q": "01110/10001/10001/10001/10101/10010/01101",
+    "R": "11110/10001/10001/11110/10100/10010/10001",
+    "S": "01111/10000/10000/01110/00001/00001/11110",
+    "T": "11111/00100/00100/00100/00100/00100/00100",
+    "U": "10001/10001/10001/10001/10001/10001/01110",
+    "V": "10001/10001/10001/10001/10001/01010/00100",
+    "W": "10001/10001/10001/10101/10101/10101/01010",
+    "X": "10001/10001/01010/00100/01010/10001/10001",
+    "Y": "10001/10001/01010/00100/00100/00100/00100",
+    "Z": "11111/00001/00010/00100/01000/10000/11111",
+    "0": "01110/10001/10011/10101/11001/10001/01110",
+    "1": "00100/01100/00100/00100/00100/00100/01110",
+    "2": "01110/10001/00001/00010/00100/01000/11111",
+    "3": "11110/00001/00001/01110/00001/00001/11110",
+    "4": "00010/00110/01010/10010/11111/00010/00010",
+    "5": "11111/10000/10000/11110/00001/00001/11110",
+    "6": "01110/10000/10000/11110/10001/10001/01110",
+    "7": "11111/00001/00010/00100/01000/01000/01000",
+    "8": "01110/10001/10001/01110/10001/10001/01110",
+    "9": "01110/10001/10001/01111/00001/00001/01110",
+    ":": "00000/00100/00100/00000/00100/00100/00000",
+    ".": "00000/00000/00000/00000/00000/00110/00110",
+    "-": "00000/00000/00000/11111/00000/00000/00000",
+    "/": "00001/00001/00010/00100/01000/10000/10000",
+    "!": "00100/00100/00100/00100/00100/00000/00100",
+    ">": "10000/01000/00100/00010/00100/01000/10000",
+    "?": "01110/10001/00001/00010/00100/00000/00100",
+}
 
 
-@lru_cache(maxsize=24)
-def get_font(size, bold=False):
-    suffix = "-Bold" if bold else ""
-    path = f"/usr/share/fonts/truetype/dejavu/DejaVuSans{suffix}.ttf"
-    return ImageFont.truetype(path, size)
-
-
-def text(draw, position, words, size=12, color=WHITE, bold=False,
-         anchor="lt", max_width=None):
-    """Keep text inside its assigned part of this very small screen."""
-    font = get_font(size, bold)
-    while max_width and draw.textlength(words, font=font) > max_width and size > 9:
-        size -= 1
-        font = get_font(size, bold)
-    draw.text(position, words, font=font, fill=color, anchor=anchor)
+def text(draw, position, words, scale=1, color=INK, right=False, max_width=None):
+    """Write crisp pixel lettering; shrink long countdowns to fit."""
+    words = words.upper()
+    while max_width and (len(words) * 6 - 1) * scale > max_width and scale > 1:
+        scale -= 1
+    width = max(0, len(words) * 6 - 1) * scale
+    x, y = position
+    if right:
+        x -= width
+    for char in words:
+        rows = GLYPHS.get(char, GLYPHS["?"]).split("/")
+        for row, pattern in enumerate(rows):
+            for column, pixel in enumerate(pattern):
+                if pixel == "1":
+                    xx, yy = x + column * scale, y + row * scale
+                    draw.rectangle((xx, yy, xx + scale - 1, yy + scale - 1), fill=color)
+        x += 6 * scale
 
 
 def seconds_between(later, earlier):
@@ -136,55 +187,74 @@ def demo_now(elapsed):
 
 
 def backpack(image, amount, color, elapsed):
-    """Draw and fill a rounded backpack; clip the fill to its actual shape."""
-    bob = round(math.sin(elapsed * 3) * 1.5)
-    left, top, right, bottom = 26, 64 + bob, 77, 111 + bob
-    draw = ImageDraw.Draw(image)
-    draw.rounded_rectangle((20, top + 12, 83, bottom - 6), radius=7,
-                           outline=MUTED, width=2)
-    draw.rounded_rectangle((41, top - 7, 62, top + 6), radius=5,
-                           outline=WHITE, width=2)
-    draw.rounded_rectangle((left, top, right, bottom), radius=11, fill=PANEL)
+    """A little pixel backpack, filled from the bottom as departure nears."""
+    sprite = Image.new("RGBA", (32, 34))
+    draw = ImageDraw.Draw(sprite)
+    draw.rectangle((3, 12, 8, 27), fill=BAG_BASE, outline=INK)
+    draw.rectangle((24, 12, 29, 27), fill=BAG_BASE, outline=INK)
+    draw.rectangle((12, 2, 21, 8), fill=INK)
+    draw.rectangle((14, 4, 19, 7), fill=BG)
+    body = [(11, 6), (22, 6), (22, 8), (25, 8), (25, 10),
+            (27, 10), (27, 28), (25, 28), (25, 30), (8, 30),
+            (8, 28), (6, 28), (6, 10), (8, 10), (8, 8), (11, 8)]
+    draw.polygon(body, fill=BAG_BASE)
 
-    mask = Image.new("L", image.size, 0)
+    mask = Image.new("L", sprite.size)
     mask_draw = ImageDraw.Draw(mask)
-    mask_draw.rounded_rectangle((left + 2, top + 2, right - 2, bottom - 2),
-                                radius=9, fill=255)
-    fill_y = bottom - 1 - round((bottom - top - 3) * amount)
-    mask_draw.rectangle((left, top, right, fill_y), fill=0)
-    image.paste(Image.new("RGB", image.size, color), (0, 0), mask)
+    mask_draw.polygon(body, fill=255)
+    fill_y = 30 - round(amount * 24)
+    mask_draw.rectangle((0, 0, 31, fill_y), fill=0)
+    sprite.paste(Image.new("RGBA", sprite.size, color), (0, 0), mask)
 
-    draw.rounded_rectangle((left, top, right, bottom), radius=11,
-                           outline=WHITE, width=2)
-    draw.line((left + 7, top + 14, right - 7, top + 14), fill=BG, width=2)
-    draw.rounded_rectangle((left + 9, top + 25, right - 9, bottom - 6),
-                           radius=4, outline=BG, width=2)
-    draw.line((right - 9, top + 13, right - 9, top + 19), fill=WHITE, width=2)
-
-
-def footsteps(draw, elapsed):
-    """Alternating footprints travel upward while it is time to leave."""
-    for index in range(2):
-        progress = (elapsed * 0.55 + index / 2) % 1.0
-        x = 28 if index % 2 == 0 else 57
-        y = round(87 - progress * 26)
-        shade = tuple(round(channel * (1 - 0.65 * progress)) for channel in (255, 123, 128))
-        draw.ellipse((x, y, x + 11, y + 17), fill=shade)
-        draw.ellipse((x + 2, y + 18, x + 9, y + 23), fill=shade)
-    draw.line((17, 113, 80, 113), fill=MUTED)
+    draw.line(body + [body[0]], fill=INK, width=1)
+    draw.line((9, 14, 24, 14), fill=INK)
+    draw.rectangle((21, 14, 22, 17), fill=INK)
+    draw.rectangle((10, 20, 23, 26), outline=INK)
+    draw.line((12, 22, 21, 22), fill=INK)
+    draw.rectangle((10, 10, 11, 12), fill=BG)
+    # Discrete movement matches the two-pixel sprite grid.
+    bob = 2 if int(elapsed * 2) % 2 else 0
+    ImageDraw.Draw(image).rectangle((33, 114, 74, 115), fill=RULE)
+    sprite = sprite.resize((64, 68), Image.Resampling.NEAREST)
+    image.paste(sprite, (18, 46 - bob), sprite)
 
 
-def open_book(draw, elapsed):
-    draw.polygon([(21, 68), (48, 73), (48, 108), (21, 103)],
-                 fill=PANEL, outline=BLUE)
-    draw.polygon([(48, 73), (77, 68), (77, 103), (48, 108)],
-                 fill=PANEL, outline=BLUE)
-    for y in (80, 87, 94):
-        draw.line((27, y, 42, y + 3), fill=MUTED)
-        draw.line((55, y + 3, 70, y), fill=MUTED)
-    # A small moving page glint keeps the final scene visibly animated.
-    x = 50 + round((math.sin(elapsed * 2) + 1) * 11)
-    draw.line((x, 76, x, 98), fill=WHITE)
+def footsteps(image, elapsed):
+    """Two chunky shoe prints alternate forward steps."""
+    sprite = Image.new("RGBA", (11, 20))
+    draw = ImageDraw.Draw(sprite)
+    shape = [(3, 1), (7, 1), (9, 3), (9, 9), (8, 11),
+             (8, 14), (2, 14), (2, 11), (1, 9), (1, 3)]
+    draw.polygon(shape, fill=RED)
+    draw.line(shape + [shape[0]], fill=INK)
+    draw.line((3, 5, 7, 5), fill=BG)
+    draw.line((3, 8, 7, 8), fill=BG)
+    draw.rectangle((3, 16, 7, 18), fill=RED, outline=INK)
+    frame = int(elapsed * 3) % 4
+    for index, x in enumerate((25, 57)):
+        lift = (0, -8, 0, 8)[(frame + index * 2) % 4]
+        shoe = sprite if index == 0 else sprite.transpose(Image.Transpose.FLIP_LEFT_RIGHT)
+        shoe = shoe.resize((22, 40), Image.Resampling.NEAREST)
+        image.paste(shoe, (x, 65 + lift), shoe)
+
+
+def open_book(image, elapsed):
+    sprite = Image.new("RGBA", (34, 30))
+    draw = ImageDraw.Draw(sprite)
+    draw.rectangle((2, 5, 31, 25), fill=BLUE, outline=INK)
+    left = [(3, 3), (12, 3), (16, 6), (16, 24), (12, 22), (3, 22)]
+    right = [(17, 6), (21, 3), (30, 3), (30, 22), (21, 22), (17, 24)]
+    for page in (left, right):
+        draw.polygon(page, fill=BG)
+        draw.line(page + [page[0]], fill=INK)
+    for y in (9, 13, 17):
+        draw.line((6, y, 12, y), fill=MUTED)
+        draw.line((21, y, 27, y), fill=MUTED)
+    # A turning page gives the final demo scene a gentle animation.
+    page_x = (29, 25, 20, 17, 20, 25)[int(elapsed * 3) % 6]
+    draw.line((17, 6, page_x, 3, page_x, 21, 17, 24), fill=BLUE)
+    sprite = sprite.resize((68, 60), Image.Resampling.NEAREST)
+    image.paste(sprite, (17, 53), sprite)
 
 
 def render(now, elapsed, show_classes=False, demo=False):
@@ -192,52 +262,58 @@ def render(now, elapsed, show_classes=False, demo=False):
     image = Image.new("RGB", (WIDTH, HEIGHT), BG)
     draw = ImageDraw.Draw(image)
     sessions = next_sessions(now)
-    text(draw, (8, 5), "ALL CLASSES" if show_classes else "TIME TO LEAVE",
-         size=11, bold=True)
+    session = sessions[0]
+    names = {"ML": "ML", "DSP": "DSP", "CompArch": "COMP ARCH",
+             "Devices": "DEVICES", "Studio": "STUDIO"}
+    title = "CLASSES" if show_classes else names[session["short"]]
+    text(draw, (10, 9), title, scale=2)
     label = ("DEMO " if demo else "") + now.strftime("%H:%M")
-    text(draw, (232, 5), label, size=11, color=YELLOW if demo else MUTED, anchor="rt")
-    draw.line((8, 21, 231, 21), fill=PANEL)
+    text(draw, (230, 13), label, right=True)
+    draw.line((10, 29, 229, 29), fill=INK)
 
     if show_classes:
-        text(draw, (8, 25), "COURSE", size=9, color=MUTED)
-        text(draw, (92, 25), "NEXT START", size=9, color=MUTED)
-        text(draw, (232, 25), "TIME LEFT", size=9, color=MUTED, anchor="rt")
+        text(draw, (14, 35), "CLASS", color=MUTED)
+        text(draw, (94, 35), "STARTS", color=MUTED)
+        text(draw, (230, 35), "IN", color=MUTED, right=True)
         for index, session in enumerate(sessions):
-            y = 40 + index * 15
+            y = 50 + index * 14
             active = session["start"] <= now < session["end"]
-            color = BLUE if active else (GREEN if index == 0 else WHITE)
+            color = BLUE if active else INK
+            draw.line((14, y + 10, 229, y + 10), fill=RULE)
             if index == 0:
-                draw.rounded_rectangle((5, y - 2, 234, y + 12), radius=3, fill=PANEL)
-            text(draw, (8, y), session["short"], size=11, color=color)
-            text(draw, (92, y), session["start"].strftime("%a %H:%M"), size=10)
+                text(draw, (4, y), ">", color=BLUE if active else GREEN)
+            text(draw, (14, y), names[session["short"]], color=color)
+            text(draw, (94, y), session["start"].strftime("%a %H:%M"))
             remaining = ("IN CLASS" if active else
                          duration(seconds_between(session["start"], now)))
-            text(draw, (232, y), remaining, size=10, color=color, anchor="rt")
+            text(draw, (230, y), remaining, color=color, right=True)
     else:
-        session = sessions[0]
         state, color, amount, seconds = class_state(session, now)
-        text(draw, (8, 26), session["name"], size=16, bold=True, max_width=224)
         time_range = session["start"].strftime("%a %H:%M") + " - " + session["end"].strftime("%H:%M")
-        text(draw, (8, 46), time_range, size=10, color=MUTED)
+        text(draw, (10, 36), time_range, color=MUTED)
 
         if state == "HEAD OUT!":
-            footsteps(draw, elapsed)
+            footsteps(image, elapsed)
         elif state == "IN CLASS":
-            open_book(draw, elapsed)
+            open_book(image, elapsed)
         else:
             backpack(image, amount, color, elapsed)
 
-        text(draw, (97, 62), duration(seconds), size=26, color=color,
-             bold=True, max_width=137)
-        text(draw, (99, 89), "until class ends" if state == "IN CLASS" else "until class",
-             size=10, color=MUTED)
-        text(draw, (99, 104), state, size=11, color=color, bold=True, max_width=135)
+        minutes = max(0, math.ceil(seconds / 60))
+        number = str(minutes) if minutes < 60 else duration(seconds)
+        caption = "LEFT IN CLASS" if state == "IN CLASS" else "TO CLASS"
+        if minutes < 60:
+            caption = "MIN " + caption
+        text(draw, (101, 55), number, scale=4, max_width=129)
+        text(draw, (102, 87), caption, color=MUTED)
+        draw.rectangle((102, 104, 107, 109), fill=color)
+        status = "NO RUSH" if state == "PLENTY OF TIME" else state
+        text(draw, (114, 104), status, color=color)
 
-    draw.line((8, 119, 231, 119), fill=PANEL)
-    top_hint = "TOP: CLOCK" if show_classes else "TOP: CLASSES"
-    text(draw, (8, 124), top_hint, size=9, color=MUTED)
-    text(draw, (232, 124), "BOTTOM: LIVE" if demo else "BOTTOM: DEMO",
-         size=9, color=YELLOW if demo else MUTED, anchor="rt")
+    draw.line((10, 122, 229, 122), fill=INK)
+    text(draw, (10, 127), "TOP BACK" if show_classes else "TOP LIST", color=MUTED)
+    text(draw, (230, 127), "BOTTOM LIVE" if demo else "BOTTOM DEMO",
+         color=MUTED, right=True)
     return image
 
 
