@@ -269,10 +269,15 @@ Do take advantage of having done the previous iteration to refine and simplify y
 
 \*\*\***Put a copy of your code in your Lab 2 Github repo.**\*\*\*
 
+Added to time_to_leave.py
+
 \*\*\***Take a video of your PiClock.**\*\*\*
 
+https://drive.google.com/file/d/1QammLheXMk2KZEFxnpA-7JBjuLT7gWN7/view?usp=sharing
 
 As always, make sure you document contributions and ideas from others (and AI) explicitly in your writeup.
+
+AI was used to implement the UI of the backpack and feet animation.
 
 You are permitted (but not required) to work in groups and share a turn in; you are expected to make equal contribution on any group work you do, and N people's group project should look like N times the work of a single person's lab.  Make sure the page for the group turn in is linked to your personal Interactive Lab Hub page. 
 
