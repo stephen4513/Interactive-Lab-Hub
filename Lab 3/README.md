@@ -137,6 +137,7 @@ I tested tiny.en and base.en using a recording of my last 4 digits. Tiny.en had 
 
 \*\***Write your own script that verbally asks for a numerical input (a phone number, zipcode, number of pets) and records the answer the respondent provides.**\*\* Numbers are a good stress test — transcription systems make characteristic errors on digit strings, and you will want to know what they are before you design around them.
 
+saved in listen.py
 
 
 ## C. Turn-taking: knowing when someone has stopped talking
