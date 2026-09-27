@@ -179,9 +179,42 @@ Storyboard and/or use a Verplank diagram to design a speech-enabled device. (Stu
 
 \*\***Post your storyboard and diagram here.**\*\*
 
+<img width="1522" height="639" alt="IMG_0154" src="https://github.com/user-attachments/assets/80256f40-bc33-4d4d-a150-68823db8de7e" />
+
+
 Write out what you imagine the dialogue to be. Use cards, post-its, or whatever method helps you develop alternatives or group responses.
 
 \*\***Please describe and document your process.**\*\*
+
+For my process, I wanted to create a simple study assistant that could help someone quickly start a focused study session without needing to use a phone or computer. I kept the interaction short so the user only has to say what they want to study and how long they want to study for.
+
+From testing the different silence thresholds, 0.2 seconds felt very responsive but could cut someone off if they paused while thinking. The 1.5 second threshold felt too slow. Because of that, I chose a pause of about 0.6 seconds before the device decides that the user is finished speaking. This gives the user enough time for a short natural pause while still keeping the conversation responsive.
+
+Script
+
+User: “I need to study DSP.”
+
+[Device waits about 0.6 seconds after the user stops speaking.]
+
+Device: “How long do you want to study?”
+
+User: “Thirty minutes.”
+
+[Device waits about 0.6 seconds.]
+
+Device: “Okay, starting a 30-minute DSP study session.”
+
+[The timer starts and the screen displays 30:00.]
+
+[After 30 minutes.]
+
+Device: “Time’s up. Did you finish what you wanted to do?”
+
+User: “Yes.”
+
+[Device waits about 0.6 seconds.]
+
+Device: “Nice job. Study session complete.”
 
 Your script should include the pauses. Where does your device wait, and for how long? You now know from Part C that this is a parameter you have to choose, not something that happens for free.
 
