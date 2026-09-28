@@ -224,6 +224,9 @@ Find a partner, and *without sharing the script with your partner* try out the d
 
 \*\***Describe if the dialogue seemed different than what you imagined when it was acted out, and how.**\*\*
 
+The dialogue was pretty similar to what I imagined, but the responses felt more natural when another person actually interacted with it. I expected the user to give short answers like “Calculus” or “3 hours,” but Jess responded with full sentences such as “I need to study calculus” and “I want to study for 3 hours.” This showed me that the device should be able to understand the important information even when users phrase their answers in different ways.
+
+
 
 ---
 
