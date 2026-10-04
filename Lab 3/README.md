@@ -307,3 +307,6 @@ Recording microphone audio would allow comparison between the actual speech and 
   - You may either delete these sections or use the toggle/hide feature in VS Code to collapse them for a cleaner look.
   - Your final submission should be neat, focused on your own work, and easy to read for grading.
 </details>
+
+
+Ai was used to help make the wizard.
