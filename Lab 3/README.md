@@ -250,7 +250,22 @@ The system should:
 
 *Document how the system works.*
 
+The user speaks about what they want to study and what they hope to accomplish. They turn the encoder to select a duration in five-minute increments.
+
+Tapping the encoder button starts recording. It uses a silence threshold of 0.6 seconds. Faster-whisper transcribes the answer, and the transcript appears in the terminal.
+
+The system uses a Wizard controller. A human operator reads the transcript, sets or corrects the subject, and chooses a spoken response from a numbered terminal menu. The operator can also type a custom response. 
+
+Holding the encoder button for approximately 1.2 seconds confirms the selected subject and duration and starts the timer. Holding it during the countdown pauses or resumes the session. A short tap remains available for spoken requests.
+
+The terminal displays the current state, selected duration, transcript, and countdown. The encoder LED changes color to indicate listening, thinking, speaking, studying, and paused states.
+
+When the timer ends, the assistant asks what the user accomplished and what they found difficult. The wizard chooses a suitable closing response. 
+
+
 *Include videos or screencaptures of both the system and the controller.*
+
+https://drive.google.com/file/d/1yg5ne-a_6uwacGnlYJrKJgufv4ihDIdb/view?usp=sharing 
 
 ## Test the system
 
@@ -261,14 +276,27 @@ Answer the following:
 ### What worked well about the system and what didn't?
 \*\**your answer here*\*\*
 
+The combination of speech and the rotary encoder would make setting up a study session straightforward. Speech lets users explain their goals in full sentences, while the knob gives them a direct way to select and correct the duration.
+The main difficulty is distinguishing a short tap from a hold. Users may also begin speaking before the microphone is ready. The LED and terminal status help explain this, but the interaction would benefit from a short sound when recording begins. The silence threshold could also end a recording too early when someone pauses to think.
+
+
 ### What worked well about the controller and what didn't?
 \*\**your answer here*\*\*
+
+The numbered response menu gives the wizard quick access to common questions. Seeing the transcript helps the operator understand the user's answer, and custom replies make it possible to respond to specific goals or misunderstandings.
+Typing a custom reply can introduce a noticeable delay. The wizard also has to follow the conversation while monitoring the transcript and timer.
 
 ### What lessons can you take away from the WoZ interactions for designing a more autonomous version of the system?
 \*\**your answer here*\*\*
 
+An autonomous version would need to understand more than the study subject. It should identify the user's goal, recognize corrections, and choose an appropriate follow-up question.
+The wizard's role shows where human judgment is still needed. A future version should confirm important information and ask for clarification when uncertain. Clear listening feedback and reliable tap-versus-hold behavior would remain important even after automating the dialogue.
+
 ### How could you use your system to create a dataset of interaction? What other sensing modalities would make sense to capture?
 \*\**your answer here*\*\*
+
+The existing logs could form a dataset. Each turn could be labeled with an intent, such as stating a goal, correcting information, requesting help, or reporting progress.
+Recording microphone audio would allow comparison between the actual speech and the generated transcript. Webcam video could capture hesitation, attention to the screen, and attempts to speak before recording starts. Logging individual button presses and encoder movements would also help identify confusion about the physical controls.
 
 <details>
   <summary><strong>Submission Cleanup Reminder (Click to Expand)</strong></summary>
