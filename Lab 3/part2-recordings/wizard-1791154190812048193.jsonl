@@ -1,0 +1,3 @@
+{"time": 1791154190.8217044, "kind": "configuration", "value": {"silence": 0.6, "test_seconds": 10.0, "controller": "terminal menu"}}
+{"time": 1791154196.1354969, "kind": "wizard_menu", "value": "Ask subject"}
+{"time": 1791154196.1372252, "kind": "device_reply", "value": "Hi. What would you like to study? Tap the knob and tell me."}

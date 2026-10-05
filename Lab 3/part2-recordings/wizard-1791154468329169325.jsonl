@@ -1,0 +1,70 @@
+{"time": 1791154468.3388443, "kind": "configuration", "value": {"silence": 0.6, "test_seconds": 30.0, "controller": "terminal menu"}}
+{"time": 1791154634.819121, "kind": "wizard_menu", "value": "Ask subject"}
+{"time": 1791154634.8210514, "kind": "device_reply", "value": "Hi. What would you like to study? Tap the knob and tell me."}
+{"time": 1791154641.2228038, "kind": "wizard_menu", "value": "Ask subject"}
+{"time": 1791154641.2245886, "kind": "device_reply", "value": "Hi. What would you like to study? Tap the knob and tell me."}
+{"time": 1791154653.8698566, "kind": "wizard_menu", "value": "Set time"}
+{"time": 1791154653.871645, "kind": "device_reply", "value": "Turn the knob to choose minutes. Tap to say something, or hold for a little over one second to start."}
+{"time": 1791154701.192376, "kind": "wizard_menu", "value": "Ask subject"}
+{"time": 1791154701.194648, "kind": "device_reply", "value": "Hi. What would you like to study? Tap the knob and tell me."}
+{"time": 1791154707.0460489, "kind": "listening_started", "value": "knob tap; silence threshold 0.6 seconds"}
+{"time": 1791154710.303786, "kind": "turn_ended", "value": 1.794}
+{"time": 1791154712.323911, "kind": "participant_transcript", "value": "I want to study for DSP."}
+{"time": 1791154717.2934487, "kind": "wizard_subject", "value": "DSP"}
+{"time": 1791154727.6638238, "kind": "wizard_menu", "value": "Set time"}
+{"time": 1791154727.665895, "kind": "device_reply", "value": "Turn the knob to choose minutes. Tap to say something, or hold for a little over one second to start."}
+{"time": 1791154734.731688, "kind": "selected_minutes", "value": 25}
+{"time": 1791154735.4061213, "kind": "selected_minutes", "value": 20}
+{"time": 1791154736.2735357, "kind": "selected_minutes", "value": 15}
+{"time": 1791154736.6115832, "kind": "selected_minutes", "value": 10}
+{"time": 1791154736.901965, "kind": "selected_minutes", "value": 15}
+{"time": 1791154736.9985874, "kind": "selected_minutes", "value": 20}
+{"time": 1791154737.1436524, "kind": "selected_minutes", "value": 25}
+{"time": 1791154737.2887516, "kind": "selected_minutes", "value": 30}
+{"time": 1791154737.626514, "kind": "selected_minutes", "value": 35}
+{"time": 1791154739.5532815, "kind": "selected_minutes", "value": 30}
+{"time": 1791154740.517664, "kind": "selected_minutes", "value": 35}
+{"time": 1791154741.0958593, "kind": "selected_minutes", "value": 30}
+{"time": 1791154741.4339502, "kind": "selected_minutes", "value": 35}
+{"time": 1791154741.9167757, "kind": "selected_minutes", "value": 30}
+{"time": 1791154744.5754259, "kind": "wizard_menu", "value": "Confirm"}
+{"time": 1791154744.5773342, "kind": "device_reply", "value": "DSP for 30 minutes. Tap to correct me, or hold to start."}
+{"time": 1791154750.7174785, "kind": "selected_minutes", "value": 25}
+{"time": 1791154752.0287535, "kind": "wizard_menu", "value": "Confirm"}
+{"time": 1791154752.0307026, "kind": "device_reply", "value": "DSP for 25 minutes. Tap to correct me, or hold to start."}
+{"time": 1791154763.2821925, "kind": "knob_hold", "value": "start"}
+{"time": 1791154763.2839236, "kind": "device_reply", "value": "Starting a 30 second demonstration."}
+{"time": 1791154765.8091214, "kind": "timer_started", "value": {"subject": "DSP", "minutes": 25, "actual_seconds": 30.0}}
+{"time": 1791154785.8497667, "kind": "wizard_menu", "value": "Check in"}
+{"time": 1791154785.851493, "kind": "device_reply", "value": "Did you finish what you wanted to do? Tap the knob to answer."}
+{"time": 1791154792.9251277, "kind": "listening_started", "value": "knob tap; silence threshold 0.6 seconds"}
+{"time": 1791154796.5866518, "kind": "turn_ended", "value": 2.402}
+{"time": 1791154798.4531243, "kind": "participant_transcript", "value": "Yes, I finished what I wanted."}
+{"time": 1791154798.4623616, "kind": "timer_elapsed", "value": "DSP"}
+{"time": 1791154798.4819367, "kind": "device_reply", "value": "Time is up. Did you finish what you wanted to do? Tap the knob to answer."}
+{"time": 1791154807.2391772, "kind": "wizard_session_completed", "value": {"mode": "ready", "remaining_seconds": 0}}
+{"time": 1791154807.239289, "kind": "wizard_menu", "value": "Complete"}
+{"time": 1791154807.2411783, "kind": "device_reply", "value": "Nice job. Study session complete."}
+{"time": 1791154818.447215, "kind": "wizard_subject", "value": "machine learning"}
+{"time": 1791154848.9183533, "kind": "wizard_menu", "value": "Ask subject"}
+{"time": 1791154848.9201372, "kind": "device_reply", "value": "Hi. What would you like to study? Tap the knob and tell me."}
+{"time": 1791154861.0983403, "kind": "wizard_menu", "value": "Ask subject"}
+{"time": 1791154861.1003115, "kind": "device_reply", "value": "Hi. What would you like to study? Tap the knob and tell me."}
+{"time": 1791154866.481654, "kind": "listening_started", "value": "knob tap; silence threshold 0.6 seconds"}
+{"time": 1791154870.5343387, "kind": "turn_ended", "value": 2.434}
+{"time": 1791154872.5142412, "kind": "participant_transcript", "value": "I want to study for DSP."}
+{"time": 1791154879.2705467, "kind": "wizard_subject", "value": "dsp"}
+{"time": 1791154886.0133064, "kind": "wizard_menu", "value": "Confirm"}
+{"time": 1791154886.015085, "kind": "device_reply", "value": "dsp for 25 minutes. Tap to correct me, or hold to start."}
+{"time": 1791154894.4167085, "kind": "selected_minutes", "value": 20}
+{"time": 1791154894.8985245, "kind": "selected_minutes", "value": 15}
+{"time": 1791154895.668924, "kind": "selected_minutes", "value": 20}
+{"time": 1791154896.5395286, "kind": "selected_minutes", "value": 25}
+{"time": 1791154896.7324767, "kind": "selected_minutes", "value": 30}
+{"time": 1791154896.925694, "kind": "selected_minutes", "value": 35}
+{"time": 1791154897.1199806, "kind": "selected_minutes", "value": 40}
+{"time": 1791154899.6801054, "kind": "wizard_menu", "value": "Confirm"}
+{"time": 1791154899.6820261, "kind": "device_reply", "value": "dsp for 40 minutes. Tap to correct me, or hold to start."}
+{"time": 1791154909.6847696, "kind": "knob_hold", "value": "start"}
+{"time": 1791154909.6867416, "kind": "device_reply", "value": "Starting a 30 second demonstration."}
+{"time": 1791154911.986963, "kind": "timer_started", "value": {"subject": "dsp", "minutes": 40, "actual_seconds": 30.0}}

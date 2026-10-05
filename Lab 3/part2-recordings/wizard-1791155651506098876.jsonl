@@ -1,0 +1,62 @@
+{"time": 1791155651.5159552, "kind": "configuration", "value": {"silence": 0.6, "test_seconds": 10.0, "controller": "terminal menu"}}
+{"time": 1791155656.2078702, "kind": "wizard_menu", "value": "Study goal"}
+{"time": 1791155656.2097886, "kind": "device_reply", "value": "What are you studying, and what would you like to get done in this session?"}
+{"time": 1791155689.7961216, "kind": "wizard_menu", "value": "Study goal"}
+{"time": 1791155689.798144, "kind": "device_reply", "value": "What are you studying, and what would you like to get done in this session?"}
+{"time": 1791155721.6391013, "kind": "wizard_menu", "value": "Study goal"}
+{"time": 1791155721.6410003, "kind": "device_reply", "value": "What are you studying, and what would you like to get done in this session?"}
+{"time": 1791155729.2045414, "kind": "listening_started", "value": "knob tap; silence threshold 0.6 seconds"}
+{"time": 1791155737.9671237, "kind": "turn_ended", "value": 6.018}
+{"time": 1791155740.3528755, "kind": "participant_transcript", "value": "I'm studying DSP. I want to understand filter design and work through five practice problems."}
+{"time": 1791155744.3382738, "kind": "wizard_subject", "value": "dsp"}
+{"time": 1791155752.4878376, "kind": "wizard_custom_reply", "value": "Start with one worked example, then try the practice problems yourself."}
+{"time": 1791155752.4898381, "kind": "device_reply", "value": "Start with one worked example, then try the practice problems yourself."}
+{"time": 1791155763.3440924, "kind": "wizard_menu", "value": "Time + plan"}
+{"time": 1791155763.3459332, "kind": "device_reply", "value": "How much time would you like, and how will you use it? Turn the knob to set the time, then tap to tell me your plan."}
+{"time": 1791155772.8721595, "kind": "listening_started", "value": "knob tap; silence threshold 0.6 seconds"}
+{"time": 1791155782.130088, "kind": "turn_ended", "value": 7.778}
+{"time": 1791155784.9126313, "kind": "participant_transcript", "value": "I want 30 minutes. I'll spend 10 minutes reviewing my notes and 12 minutes working on the problem."}
+{"time": 1791155791.919055, "kind": "selected_minutes", "value": 35}
+{"time": 1791155792.5929084, "kind": "selected_minutes", "value": 30}
+{"time": 1791155796.502178, "kind": "wizard_menu", "value": "Confirm"}
+{"time": 1791155796.5039747, "kind": "device_reply", "value": "Okay, dsp for 30 minutes. You can change the time, or hold the knob when you are ready to start."}
+{"time": 1791155805.545509, "kind": "knob_hold", "value": "start"}
+{"time": 1791155805.5471966, "kind": "device_reply", "value": "Starting a 10 second demonstration."}
+{"time": 1791155807.7311687, "kind": "timer_started", "value": {"subject": "dsp", "minutes": 30, "actual_seconds": 10.0}}
+{"time": 1791155817.7342403, "kind": "timer_elapsed", "value": "dsp"}
+{"time": 1791155817.7538824, "kind": "device_reply", "value": "Time is up. What did you get done, and was there anything you found difficult?"}
+{"time": 1791155824.4044569, "kind": "listening_started", "value": "knob tap; silence threshold 0.6 seconds"}
+{"time": 1791155829.8573601, "kind": "turn_ended", "value": 3.458}
+{"time": 1791155832.0937216, "kind": "participant_transcript", "value": "I understand the first example better but I need to practice more."}
+{"time": 1791155835.5175128, "kind": "wizard_session_completed", "value": {"mode": "ready", "remaining_seconds": 0}}
+{"time": 1791155835.5176718, "kind": "wizard_menu", "value": "Complete"}
+{"time": 1791155835.5193896, "kind": "device_reply", "value": "Thanks for checking in. Your session is complete. You can come back when you are ready to study again."}
+{"time": 1791156042.88363, "kind": "wizard_menu", "value": "Confirm"}
+{"time": 1791156042.885371, "kind": "device_reply", "value": "Okay, dsp for 30 minutes. You can change the time, or hold the knob when you are ready to start."}
+{"time": 1791156135.4879596, "kind": "wizard_menu", "value": "Study goal"}
+{"time": 1791156135.489679, "kind": "device_reply", "value": "What are you studying, and what would you like to get done in this session?"}
+{"time": 1791156141.4978664, "kind": "listening_started", "value": "knob tap; silence threshold 0.6 seconds"}
+{"time": 1791156148.9642246, "kind": "turn_ended", "value": 5.73}
+{"time": 1791156151.4084141, "kind": "participant_transcript", "value": "I'm studying DSP, I want to understand the filter design and work through 5 practice problems."}
+{"time": 1791156161.2745051, "kind": "wizard_custom_reply", "value": "Start with one worked example, then try the practice problems yourself."}
+{"time": 1791156161.2762513, "kind": "device_reply", "value": "Start with one worked example, then try the practice problems yourself."}
+{"time": 1791156169.3863242, "kind": "wizard_menu", "value": "Time + plan"}
+{"time": 1791156169.38806, "kind": "device_reply", "value": "How much time would you like, and how will you use it? Turn the knob to set the time, then tap to tell me your plan."}
+{"time": 1791156178.6338336, "kind": "listening_started", "value": "knob tap; silence threshold 0.6 seconds"}
+{"time": 1791156186.10699, "kind": "turn_ended", "value": 6.146}
+{"time": 1791156188.8155205, "kind": "participant_transcript", "value": "I want 30 minutes, I'll spend 10 minutes reviewing my notes and 20 minutes working on the problem."}
+{"time": 1791156194.3417282, "kind": "wizard_menu", "value": "Confirm"}
+{"time": 1791156194.3434548, "kind": "device_reply", "value": "Okay, dsp for 30 minutes. You can change the time, or hold the knob when you are ready to start."}
+{"time": 1791156204.677886, "kind": "knob_hold", "value": "start"}
+{"time": 1791156204.679667, "kind": "device_reply", "value": "Starting a 10 second demonstration."}
+{"time": 1791156207.1189053, "kind": "timer_started", "value": {"subject": "dsp", "minutes": 30, "actual_seconds": 10.0}}
+{"time": 1791156217.154526, "kind": "timer_elapsed", "value": "dsp"}
+{"time": 1791156217.174068, "kind": "device_reply", "value": "Time is up. What did you get done, and was there anything you found difficult?"}
+{"time": 1791156223.9131641, "kind": "listening_started", "value": "knob tap; silence threshold 0.6 seconds"}
+{"time": 1791156230.6760466, "kind": "turn_ended", "value": 5.474}
+{"time": 1791156233.324613, "kind": "participant_transcript", "value": "I understand the first example better but I still need more practice choosing the filter parameter."}
+{"time": 1791156233.7875845, "kind": "wizard_session_completed", "value": {"mode": "ready", "remaining_seconds": 0}}
+{"time": 1791156233.787681, "kind": "wizard_menu", "value": "Complete"}
+{"time": 1791156233.7894795, "kind": "device_reply", "value": "Thanks for checking in. Your session is complete. You can come back when you are ready to study again."}
+{"time": 1791156253.0911598, "kind": "wizard_menu", "value": "Study goal"}
+{"time": 1791156253.3152409, "kind": "device_reply", "value": "What are you studying, and what would you like to get done in this session?"}

@@ -1,0 +1,58 @@
+{"time": 1791153935.3213196, "kind": "configuration", "value": {"silence": 0.6, "test_seconds": 10.0, "controller": "terminal menu"}}
+{"time": 1791153970.9242628, "kind": "wizard_menu", "value": "Ask subject"}
+{"time": 1791153970.9262958, "kind": "device_reply", "value": "Hi. What would you like to study? Tap the knob and tell me."}
+{"time": 1791153978.2258532, "kind": "listening_started", "value": "knob tap; silence threshold 0.6 seconds"}
+{"time": 1791153981.1949208, "kind": "turn_ended", "value": 2.146}
+{"time": 1791153983.1241593, "kind": "participant_transcript", "value": "I want to study DSD."}
+{"time": 1791153999.1128066, "kind": "wizard_menu", "value": "Set time"}
+{"time": 1791153999.1147387, "kind": "device_reply", "value": "Turn the knob to choose minutes. Tap to say something, or hold for a little over one second to start."}
+{"time": 1791154006.274934, "kind": "selected_minutes", "value": 25}
+{"time": 1791154006.9015234, "kind": "selected_minutes", "value": 20}
+{"time": 1791154007.6724687, "kind": "selected_minutes", "value": 25}
+{"time": 1791154007.769344, "kind": "selected_minutes", "value": 30}
+{"time": 1791154008.2046976, "kind": "selected_minutes", "value": 35}
+{"time": 1791154008.6872995, "kind": "selected_minutes", "value": 40}
+{"time": 1791154011.3943782, "kind": "knob_hold", "value": "missing_subject"}
+{"time": 1791154031.8773506, "kind": "listening_started", "value": "knob tap; silence threshold 0.6 seconds"}
+{"time": 1791154035.6303744, "kind": "turn_ended", "value": 2.082}
+{"time": 1791154037.603731, "kind": "participant_transcript", "value": "I want to study for 30 minutes."}
+{"time": 1791154047.49077, "kind": "wizard_menu", "value": "Set time"}
+{"time": 1791154047.4927046, "kind": "device_reply", "value": "Turn the knob to choose minutes. Tap to say something, or hold for a little over one second to start."}
+{"time": 1791154053.8957174, "kind": "wizard_menu", "value": "Repeat"}
+{"time": 1791154053.8975115, "kind": "device_reply", "value": "I did not catch that. Tap the knob and say it again."}
+{"time": 1791154058.6540382, "kind": "wizard_menu", "value": "Check in"}
+{"time": 1791154058.6561642, "kind": "device_reply", "value": "Did you finish what you wanted to do? Tap the knob to answer."}
+{"time": 1791154063.759629, "kind": "wizard_session_completed", "value": {"mode": "ready", "remaining_seconds": 0}}
+{"time": 1791154063.759732, "kind": "wizard_menu", "value": "Complete"}
+{"time": 1791154063.7615504, "kind": "device_reply", "value": "Nice job. Study session complete."}
+{"time": 1791154069.7662456, "kind": "wizard_custom_reply", "value": "hi"}
+{"time": 1791154069.7679808, "kind": "device_reply", "value": "hi"}
+{"time": 1791154077.1395113, "kind": "selected_minutes", "value": 45}
+{"time": 1791154077.6211915, "kind": "selected_minutes", "value": 40}
+{"time": 1791154078.9233797, "kind": "selected_minutes", "value": 45}
+{"time": 1791154079.308673, "kind": "selected_minutes", "value": 50}
+{"time": 1791154079.5984454, "kind": "selected_minutes", "value": 55}
+{"time": 1791154080.5123677, "kind": "selected_minutes", "value": 60}
+{"time": 1791154081.7163873, "kind": "selected_minutes", "value": 45}
+{"time": 1791154081.7647107, "kind": "selected_minutes", "value": 40}
+{"time": 1791154082.0538778, "kind": "selected_minutes", "value": 35}
+{"time": 1791154082.246736, "kind": "selected_minutes", "value": 25}
+{"time": 1791154082.391684, "kind": "selected_minutes", "value": 20}
+{"time": 1791154082.4401295, "kind": "selected_minutes", "value": 15}
+{"time": 1791154082.5850358, "kind": "selected_minutes", "value": 10}
+{"time": 1791154082.7780013, "kind": "selected_minutes", "value": 5}
+{"time": 1791154085.5304077, "kind": "knob_hold", "value": "missing_subject"}
+{"time": 1791154109.2229013, "kind": "wizard_subject", "value": "I want to study for 30 minutes."}
+{"time": 1791154117.4104292, "kind": "wizard_menu", "value": "Confirm"}
+{"time": 1791154117.4121757, "kind": "device_reply", "value": "I want to study for 30 minutes. for 5 minutes. Tap to correct me, or hold to start."}
+{"time": 1791154129.2912776, "kind": "knob_hold", "value": "start"}
+{"time": 1791154129.2930434, "kind": "device_reply", "value": "Starting a 10 second demonstration."}
+{"time": 1791154131.5078778, "kind": "timer_started", "value": {"subject": "I want to study for 30 minutes.", "minutes": 5, "actual_seconds": 10.0}}
+{"time": 1791154141.5441017, "kind": "timer_elapsed", "value": "I want to study for 30 minutes."}
+{"time": 1791154141.563697, "kind": "device_reply", "value": "Time is up. Did you finish what you wanted to do? Tap the knob to answer."}
+{"time": 1791154147.7322454, "kind": "listening_started", "value": "knob tap; silence threshold 0.6 seconds"}
+{"time": 1791154150.0885994, "kind": "turn_ended", "value": 0.898}
+{"time": 1791154151.8507009, "kind": "participant_transcript", "value": "Yes, I did."}
+{"time": 1791154157.777799, "kind": "wizard_session_completed", "value": {"mode": "ready", "remaining_seconds": 0}}
+{"time": 1791154157.7778957, "kind": "wizard_menu", "value": "Complete"}
+{"time": 1791154157.7795699, "kind": "device_reply", "value": "Nice job. Study session complete."}
