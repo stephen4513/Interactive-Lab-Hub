@@ -285,13 +285,23 @@ As you develop your Feast Automata concept, consider where the sensor and actuat
 
 **\*\*\*Draw 5 sketches that explore different physical arrangements for your sensing and actuation.\*\*\***
 
+<img width="573" height="654" alt="IMG_0163" src="https://github.com/user-attachments/assets/e14a2d3d-68ec-4800-86e5-b12a23853fcd" />
+
+
 **\*\*\*What questions do these sketches raise? What do you need to physically prototype to answer them?\*\*\***
 
+The sketches made me think about how tall the stand needs to be, how long the arm should be, and whether it can lift the tea bag completely out of the mug. I also need to check whether the structure stays stable as the arm moves and whether the opening in the box gives the arm enough room. I’ll make a cardboard model to test its height, reach, and clearance.
+
 **\*\*\*Pick one design to prototype and explain why.\*\*\***
+
+I chose design 5, the cardboard box housing. It provides a place to mount the servo and rotary knob while keeping the components together. I can also change the arm length and the opening in the box without rebuilding the entire structure.
 
 Build a cardboard or other low-fidelity physical prototype of your design.
 
 **\*\*\*Document your rough prototype with photos and/or video.\*\*\***
+
+<img width="2160" height="2880" alt="IMG_1436" src="https://github.com/user-attachments/assets/7adf212a-c4a1-4ba2-ba7a-37c92f7733ab" />
+
 
 ---
 
