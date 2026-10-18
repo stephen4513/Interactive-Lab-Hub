@@ -534,3 +534,8 @@ For submission, the readme.md page for this lab should be edited to include the 
 * Upload any materials that explain what you did, into your lab 4 repository, and link them in your lab 4 readme.md.
 * Link your Lab 4 readme.md in your main Interactive-Lab-Hub readme.md. 
 * Labs are due on Mondays, make sure to submit your Lab 4 readme.md to Canvas.
+
+
+I used ChatGPT to help with debugging. I physically assembled and tested the hardware, calibrated the thresholds and servo positions, developed the demonstration arrangement, and recorded the prototype's behavior. 
+
+
