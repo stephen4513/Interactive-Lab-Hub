@@ -488,7 +488,7 @@ This is a playful way to visualize how the expander works, but the same techniqu
 
 I built a device that dips a tea bag into a mug. It uses a rotary knob as the input and a servo motor to move the arm. The arm raises and lowers the tea bag. The cardboard box supports the arm and holds the electronics together.
 
-The code for the project is [View my Python code](knob_servo.py)
+The code for the project is [code](knob_servo.py)
 
 This is the project being built:
 <img width="3024" height="4032" alt="IMG_1446" src="https://github.com/user-attachments/assets/460c0047-05d0-456e-805c-bf3d271f60e8" />
