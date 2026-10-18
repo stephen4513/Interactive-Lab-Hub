@@ -4,8 +4,8 @@ import pi_servo_hat
 from adafruit_seesaw import rotaryio, seesaw
 
 SERVO_CH = 0
-SERVO_MIN = 30
-SERVO_MAX = 90
+SERVO_MIN = 0
+SERVO_MAX = 120
 START_ANGLE = 60
 DEGREES_PER_COUNT = 2
 ENCODER_DIRECTION = -1
