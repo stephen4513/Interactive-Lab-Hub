@@ -176,6 +176,8 @@ Consider how you might use this position based approach to create an interaction
 
 <img width="1324" height="870" alt="image" src="https://github.com/user-attachments/assets/03eaa8f6-bb01-4460-95a5-d0f399ac7400" />
 
+I could use body tracking to check whether someone is at their desk. If they stay there too long at night, the device could remind them to take a break or go to bed. If it is daytime It can remind them to stand up and exercise.
+
 
 ## Part D. 
 ### Reason: run Qwen on the Pi with Ollama
