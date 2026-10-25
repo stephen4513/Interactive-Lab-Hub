@@ -212,7 +212,19 @@ A 0.8B model is slow and sometimes wrong. It will invent events that are not in 
 \*\*\***Ask Qwen three questions to answer. Paste the questions, the answers and how long each took. Try one of them with `qwen3:0.6b` and compare.**\*\*\*
 
 <details>
-  Q&A here
+  I asked Qwen about Roosevelt Island’s history, a photo, and its name. Qwen3.5 took 30.9 seconds, 39.2 seconds, and 4.3 seconds, respectively. Qwen3 answered the history question faster, in 16.9 seconds, but both models gave incorrect history facts. This showed me that faster answers are not always accurate.
+  Q: Tell me a bit about the history of Roosevelt Island.
+A — Qwen3.5: “Roosevelt Island was originally built as a public park and playground for immigrants to escape poverty, but it later became a historic site featuring the Statue of Liberty and a former military base. Today, it is a popular tourist destination known for its architecture and cultural significance.”
+Time: 30.9 seconds.
+A — Qwen3: “Roosevelt Island is a small, remote island located in the Pacific Ocean, off the coast of New Zealand. It was originally a military base during World War II, and it became a significant cultural and historical site in the 1960s. Today, it is a popular destination for outdoor activities and a symbol of the natural beauty and tranquility of the region.”
+Time: 16.9 seconds.
+Comparison: Qwen3 was faster, but both answers included incorrect history facts.
+Q: What is in this photo?
+A — Qwen3.5: “A young man with dark hair and light skin, wearing a white t-shirt, is sitting in front of a bed in a dimly lit room.”
+Time: 39.2 seconds.
+Q: What is your name?
+A — Qwen3.5: “I am Qwen3.5, designed to assist with complex tasks across various domains. How can I help you today?”
+Time: 4.3 seconds.
 </details>
 
 
