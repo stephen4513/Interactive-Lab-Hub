@@ -1,0 +1,13 @@
+{
+  "session": "20261101-201416-25843b",
+  "started": "2026-11-01T20:14:16.711-05:00",
+  "ended": "2026-11-01T20:14:38.864-05:00",
+  "sample_count": 1,
+  "loud_samples": 1,
+  "wake_presses": 0,
+  "recording_errors": 0,
+  "matches": [],
+  "limitation": "Short audio samples have gaps. A nearby noise is a possible clue, not proof of what woke you.",
+  "loudest_clip": "clips/0000.wav",
+  "loudest_time": "2026-11-01T20:14:31.741-05:00"
+}

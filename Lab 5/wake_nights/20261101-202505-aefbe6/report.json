@@ -1,0 +1,18 @@
+{
+  "session": "20261101-202505-aefbe6",
+  "started": "2026-11-01T20:25:05.970-05:00",
+  "ended": "2026-11-01T20:25:49.611-05:00",
+  "sample_count": 6,
+  "loud_samples": 2,
+  "wake_presses": 1,
+  "recording_errors": 0,
+  "matches": [
+    {
+      "wake": "2026-11-01T20:25:42.651-05:00",
+      "clip": "clips/0001.wav",
+      "clip_time": "2026-11-01T20:25:36.003-05:00",
+      "seconds_before": 4.5
+    }
+  ],
+  "limitation": "Short audio samples have gaps. A nearby noise is a possible clue, not proof of what woke you."
+}
