@@ -288,6 +288,9 @@ Use storyboards and/or [Verplank diagrams](https://ccrma.stanford.edu/courses/25
 
 \*\*\***Insert ideas, sketches, Verplank diagrams and storyboards for your night-time interaction here.**\*\*\*
 
+<img width="573" height="270" alt="IMG_0174" src="https://github.com/user-attachments/assets/b096f93e-7a9b-48c5-831f-b2eddf225c30" />
+
+
 ## Prep for Part 2
 
 1. Look at and give feedback on the Part F storyboards.
@@ -298,12 +301,17 @@ Use storyboards and/or [Verplank diagrams](https://ccrma.stanford.edu/courses/25
 
 \*\*\***Post your revised storyboard here.**\*\*\*
 
+<img width="573" height="270" alt="IMG_0174" src="https://github.com/user-attachments/assets/c4031b1d-9570-4d20-83f2-9b4eec4fc8c8" />
+
+
 ## Part G. 
 ### Design the interaction before
 
 The hand-off: the person tells the device what to watch tonight, and the device acknowledges it. Keep it to a thirty-second ritual. A button or a touch (Lab 4), a spoken sentence (Lab 3), a wave or a Quiet Coyote at the camera (Part C). The acknowledgement can be a line on the display, a tone, or an LED that dims rather than lights up. At its simplest, the hand-off just sets the question that the morning will answer.
 
 \*\*\***Describe the interaction before.**\*\*\*
+
+Before bed, I press a button to start the sound monitor. A dim light shows that it is ready. I keep the device beside my bed so I can easily press the button if a noise wakes me up.
 
 ## Part H. 
 ### Incorporate the observant system
@@ -319,6 +327,13 @@ Fake a night first: run it for thirty seconds while you walk around, stop it, an
 
 \*\*\***Screenshots or videos of the running system.**\*\*\*
 
+<img width="2880" height="2160" alt="IMG_1498" src="https://github.com/user-attachments/assets/be6b4f33-51fd-4fe0-a42c-8a93ed13d587" />
+
+<img width="617" height="64" alt="image" src="https://github.com/user-attachments/assets/22ef9521-5168-468e-8379-a0648239b904" />
+
+<img width="2880" height="2160" alt="IMG_1502" src="https://github.com/user-attachments/assets/8fa72adf-8d2b-490f-a8e0-2576cc5f5c7b" />
+
+
 ## Part I. 
 ### Design the interaction after
 
@@ -330,6 +345,8 @@ The reveal. The night produced a log; the morning turns it into something a half
 
 Make it yours: show the report on the Mini PiTFT, read it aloud with Piper from Lab 3, plot the night as a timeline, or ask for JSON (`--json`, Part D) and move a servo. Whatever you pick, make sure it is honest about a night in which nothing happened.
 
+In the morning, I press the bottom button to see the results and play a saved clip. My short test recorded 6 sound checks, 2 loud samples, and one wake-up button press at 20:25:42. It played a clip recorded 4.5 seconds before the press. Qwen added incorrect details
+
 ## Final documentation
 
 Document all the prototypes and iterations you have designed and worked on. The deliverables for this lab are writings, sketches, photos, and videos that show what your system:
@@ -340,6 +357,8 @@ Document all the prototypes and iterations you have designed and worked on. The 
 
 \*\*\***Include a short video of the whole system**\*\*\*
 
+https://drive.google.com/file/d/1HF4-RWAfxLeA0CyhIO71yclCwpxnFW4U/view?usp=sharing 
+
 As always, make sure you document contributions and ideas from others (and AI) explicitly in your writeup.
 
 You are permitted (but not required) to work in groups and share a turn in; you are expected to make equal contribution on any group work you do, and N people's group project should look like N times the work of a single person's lab. Make sure the page for the group turn in is linked to your personal Interactive Lab Hub page.
@@ -349,6 +368,9 @@ You are permitted (but not required) to work in groups and share a turn in; you 
 For submission, the readme.md page for this lab should be edited to include the work you have done:
 * Upload any materials that explain what you did, including your code and night log, into your Lab 5 repository, and link them in your Lab 5 readme.md.
 * Labs are due on Sundays, make sure to submit your Lab 5 readme.md to Canvas.
+
+* AI was used to configure the cameras microphone since it was not working for most of time.
+
 
 <details>
   <summary><strong>Submission Cleanup Reminder (Click to Expand)</strong></summary>
