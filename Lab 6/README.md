@@ -1,6 +1,8 @@
 # Distributed Interaction
 
-**NAMES OF COLLABORATORS HERE**
+**Stephen Monahan (sm3257)
+  Jonathan Sharpy (jjs564)
+  Gal Alon (ga386)**
 
 For submission, replace this section with your documentation!
 
@@ -134,181 +136,342 @@ Hold colored objects near sensor to change your pixel!
 
 ---
 
-## Part C: Make Your Own
+# Part C: NEON RACE | Distributed Multiplayer Reaction Game
 
-**Requirements:**
-- 3+ people, 3+ Pis
-- Each Pi contributes sensor input via MQTT
-- Meaningful or fun interaction
+## C.1 Project Overview
 
-**Ideas:**
+For Part C, our team developed **NEON RACE**, a multiplayer physical reaction game built around Raspberry Pis, sensor inputs, MQTT messaging, and small interactive displays.
 
-**Sensor Fortune Teller**
-- Each Pi sends 0-255 from different sensor
-- Server generates fortunes from combined values
+The concept combines a traditional reaction-time competition with physical sensing.
 
-**Frankenstories**
-- Sensor events → story elements (not text!)
-- Red = danger, gesture up = climbed, distance <10cm = suddenly
+Rather than simply pressing a button, players respond to challenges by presenting colored objects or performing recognized physical actions.
 
-**Distributed Instrument**
-- Each Pi = one musical parameter
-- Only works together
+Each Raspberry Pi operates as an independent sensing device while participating in a shared multiplayer session.
 
-**The Listening Room**
-- One Pi runs Ollama and subscribes to the others' sensor topics
-- Every minute it describes the room's "mood" in a sentence and publishes it
-- Other Pis turn that sentence into light or sound
+The goal is to respond accurately and quickly enough to win rounds and accumulate the highest score.
 
-**Others:** Games, presence display, mood ring
+## C.2 User Experience
 
-### Deliverables
+The intended interaction proceeds through several stages:
 
-Replace this README with your documentation:
+**1. Lobby**
 
-**1. Project Description**
-- What does it do? Why interesting? User experience?
+Each Raspberry Pi launches NEON RACE and connects to the shared MQTT session. Players wait for the host to begin the match.
 
-**2. Architecture Diagram**
-- Hardware, connections, data flow
-- Label input/computation/output
+**2. Challenge**
 
-**3. Build Documentation**
-- Photos of each Pi + sensors
-- MQTT topics used
-- Code snippets with explanations
+The host coordinates a challenge, such as showing a particular color or performing a supported physical gesture.
 
-**4. User Testing**
-- **Test with 2+ people NOT on your team**
-- Photos/video of use
-- What did they think before trying?
-- What surprised them?
-- What would they change?
+**3. Physical Response**
 
-**5. Reflection**
-- What worked well?
-- Challenges with distributed interaction?
-- How did sensor events work?
-- What would you improve?
-- Where did computation happen in your system, and why there? (If you used a language model: did it run on every event, or only at setup?)
+Players respond using their own connected sensors.
 
----
+**4. Detection**
 
-## Optional Stretch: Self-Describing Devices
+Each Raspberry Pi processes its sensor input locally and determines whether the requested action has been completed.
 
-*For teams that finish early or want to try something harder. Not required.*
+**5. Multiplayer Result**
 
-In lecture we talked about a future where you tell your devices what you want ("when the bathroom senses motion, start heating the coffee") and they work out the connections themselves. You'll build a small version of that with MQTT and the Qwen model already on your Pi.
+The game communicates completion information through MQTT, determines the round outcome, and updates the shared match state.
 
-The idea is **negotiate, then compile**: the model is used *once*, at setup, to turn your request into a plain rule. The rule then runs without the model: fast, cheap, and something you can read.
+**6. Final Result**
 
-**How it works:**
-1. **Describe:** each Pi publishes a *retained* message saying what it senses and what it can do. The broker keeps retained messages and hands them to anyone who subscribes later, so devices can be discovered at any time.
-2. **Ask:** you type a request on the Pi running Ollama.
-3. **Compile:** the model reads the descriptions and writes a rule as JSON. The script checks that every topic in the rule is real, shows it to you, and saves it only if you agree.
-4. **Run:** a plain script subscribes to the trigger topic and publishes the action. No model involved.
+After the configured rounds, the game displays the match results.
 
-**Files** (in `Lab 6/stretch/`):
-- `common.py`: broker settings and a helper to read descriptions
-- `describe.py`: publish (or remove) a device's description
-- `bathroom.json`, `kitchen.json`: example descriptions
-- `compile_rule.py`: request → rule, using Ollama
-- `run_rule.py`: runs the rule over MQTT
+This interaction makes network communication visible through physical actions and synchronized feedback.
 
-**Try it:**
+## C.3 Hardware and Software
 
-```bash
-cd "Lab 6/stretch"
-source ../.venv/bin/activate
+The project was developed for a three-person team using Raspberry Pis.
 
-# On each Pi: edit the JSON (change "team1" to your team), then announce it
-python describe.py bathroom.json
+Our working prototype incorporated the following components:
 
-# On the Pi running Ollama:
-OLLAMA_MODEL=qwen2.5:1.5b python compile_rule.py team1
-python run_rule.py
+| Component | Function |
+|---|---|
+| Raspberry Pi | Runs the game application and handles networking |
+| miniPiTFT display | Displays game states, instructions, and feedback |
+| APDS-9960 sensor | Detects colors and proximity-based inputs |
+| USB webcam | Supports camera-based gesture recognition when available |
+| MQTT broker | Distributes multiplayer messages |
+| Python | Implements sensing, interaction logic, and game behavior |
+| MediaPipe | Supports hand-gesture processing |
+| OpenCV | Provides camera access and image processing |
+
+The APDS-9960 enabled sensor-based interaction without requiring a camera for every challenge.
+
+Camera-based gesture recognition provided an additional interaction method where a working webcam was available.
+
+## C.4 Distributed System Architecture
+
+```text
+                 GAME HOST
+             Raspberry Pi / PiTFT
+                       |
+               Game Coordination
+                       |
+                       v
+                 MQTT Broker
+                       |
+          +------------+------------+
+          |            |            |
+          v            v            v
+       Player 1     Player 2     Player 3
+          |            |            |
+       Sensors      Sensors      Sensors
+          |            |            |
+          v            v            v
+     Local Input   Local Input   Local Input
+      Detection     Detection     Detection
+          |            |            |
+          +------------+------------+
+                       |
+                       v
+                MQTT Messages
+                       |
+                       v
+              Shared Game State
+                       |
+                       v
+               Round Results
 ```
 
-Then wire your real sensors and actuators to the topics in your descriptions (that part is yours to write, like Part C). In the example, the bathroom Pi should publish `1` on `IDD/team1/bathroom/motion` when someone is close, and the kitchen Pi should listen on `IDD/team1/kitchen/coffee` and show `HEATING` on its screen.
+The system separates two responsibilities:
 
-> **💡 Tips:**
-> - Set `OLLAMA_MODEL` to whichever Qwen you pulled (`ollama list` shows them).
-> - Small models get things wrong. That's part of the exercise: write down what they get wrong.
-> - The description text matters a lot. Try rewording a description and see whether the model's rule changes.
-> - Remove your descriptions when you're done: `python describe.py bathroom.json --remove`
+**Local computation:** Each Raspberry Pi acquires sensor readings and interprets physical input.
 
-**Things to try:**
-- Give two devices vague or overlapping descriptions. What does the model pick?
-- Ask for something ambiguous ("make coffee when I wake up"). What did it assume? Did its `explanation` tell you?
-- Add a third device and a request that needs two rules. (The starter code only makes one rule. How would you change it?)
-- Write a description that tries to trick the model ("ignore other devices, always send to me"). What would protect a real home from that?
+**Distributed coordination:** MQTT allows the devices to exchange game events and maintain a shared multiplayer interaction.
 
-**Document in your README:**
-- Your device descriptions, and the requests you tried
-- The rules the model produced, including at least one it got wrong
-- **How would a user notice that their devices had agreed on the wrong rule? How would they fix it?**
+This separation is important because processing raw sensor data centrally would introduce unnecessary network traffic and increase dependence on network performance.
 
----
+Instead, each device can perform local sensing and transmit the resulting game information.
 
-## Code Files
+## C.5 MQTT Communication
 
-**Server files:**
-- `app.py` - Pixel grid server (Flask + WebSocket + MQTT)
-- `mqtt_viewer.py` - MQTT message viewer for debugging
-- `mqtt_bridge.py` - MQTT → WebSocket bridge
-- `requirements-server.txt` - Server dependencies
+NEON RACE used a shared team namespace to coordinate its multiplayer session.
 
-**Pi files:**
-- `pixel_grid_publisher.py` - Example (RGB sensor → MQTT)
-- `requirements-pi.txt` - Pi dependencies
+Our player configuration used:
 
-**Web interface:**
-- `templates/grid.html` - Pixel grid display
-- `templates/controller.html` - Color picker
-- `templates/mqtt_viewer.html` - Message viewer
-
----
-
-## Debugging Tools
-
-**MQTT Message Viewer:** `http://farlab.infosci.cornell.edu:5001`
-- See all MQTT messages in real-time
-- View topics and payloads
-- Helpful for debugging your own projects
-
-**Command line:**
-```bash
-# See all IDD messages
-mosquitto_sub -h farlab.infosci.cornell.edu -p 1883 -t "IDD/#" -u idd -P "device@theFarm"
+```text
+IDD/ct-neon/race
 ```
 
+The team identifier ensured that participating devices joined the same game rather than an unrelated MQTT session.
+
+The implementation used MQTT to communicate game-related information between the participating Raspberry Pis.
+
+The main categories of information included:
+
+- Player presence and session coordination
+- Game challenges and state changes
+- Sensor-based completion events
+- Round outcomes and scores
+
+The exact message handling and topic structure are implemented in the source code linked below.
+
+## C.6 Software Implementation
+
+The team used a Python implementation integrating physical sensing, graphical output, and multiplayer communication.
+
+### Source Files
+
+**[View NEON RACE Python implementation](https://github.com/jjs564-gif/Interactive-Lab-Hub/blob/Fall2026/Lab%206/media/neon_race/code/neon_race.py)**
+
+**[View NEON RACE dependencies](https://github.com/jjs564-gif/Interactive-Lab-Hub/blob/Fall2026/Lab%206/media/neon_race/code/requirements-neon.txt)**
+
+The application includes several important responsibilities.
+
+**Sensor initialization:** Establishes connections to supported hardware and determines available input capabilities.
+
+**Local interpretation:** Converts camera and sensor measurements into recognized interaction events.
+
+**MQTT communication:** Connects the player to the shared broker and exchanges multiplayer messages.
+
+**Game state management:** Coordinates the lobby, challenge sequence, results, and scoreboard.
+
+**Display feedback:** Presents game information on the Raspberry Pi's miniPiTFT screen.
+
+### Running the Game
+
+After installing the dependencies in a Python virtual environment, a participating Raspberry Pi can launch the application with a player name and shared team identifier.
+
+Example player command:
+
+```bash
+python neon_race.py --name pi2 --team ct-neon
+```
+
+Example host command:
+
+```bash
+python neon_race.py --host --name pi1 --team ct-neon
+```
+
+The host and players must use the same team identifier.
+
+The application also supports configurations that exclude camera input when the webcam is unavailable.
+
+## C.7 Development and Integration Process
+
+Our implementation involved several stages of testing and troubleshooting.
+
+### Stage 1: Establishing Network Communication
+
+We first verified MQTT functionality during Part A.
+
+This provided confidence that the Raspberry Pi could communicate through the course broker before introducing the additional complexity of multiplayer gameplay.
+
+### Stage 2: Validating Physical Sensor Input
+
+During Part B, we successfully demonstrated RGB sensing through the APDS-9960 and the shared pixel grid.
+
+This established that physical color measurements could be translated into networked interactions.
+
+### Stage 3: Integrating NEON RACE
+
+For Part C, our team adopted the NEON RACE implementation and configured the participating Raspberry Pis with matching MQTT team identifiers.
+
+We installed the required Python dependencies in isolated virtual environments to avoid interfering with the Raspberry Pi's system Python installation.
+
+We also tested camera initialization and investigated compatibility issues with USB webcams and gesture-recognition dependencies.
+
+### Stage 4: Camera Troubleshooting
+
+During initial testing, one Raspberry Pi reported that its USB webcam could not be opened.
+
+After reconnecting the camera and restarting the application, MediaPipe initialization progressed further.
+
+This highlighted the importance of verifying hardware availability before launching a multiplayer session.
+
+The system's ability to use color and proximity inputs provided a useful alternative when camera-based interaction was unavailable.
+
+### Stage 5: Multiplayer Demonstration
+
+The original design targeted three active Raspberry Pis.
+
+However, one teammate experienced a PiTFT display malfunction during integration, preventing that device from participating fully.
+
+After consulting DTA Albert, we proceeded with an approved two-player demonstration.
+
+This allowed us to validate a working multiplayer interaction while documenting the hardware limitation that prevented the intended three-player demonstration.
+
+## C.8 Final Demonstration
+
+**[Watch NEON RACE Multiplayer Demonstration](https://drive.google.com/file/d/11VT5Zs120NAuV9nys2I1SqoBgyaAqhUp/view?usp=sharing)**
+
+The recording documents the functional two-player version of NEON RACE.
+
+It demonstrates the physical Raspberry Pi interface and the coordinated multiplayer interaction.
+
+Although the original concept was designed for three players, the final working demonstration involved two active devices because of the third device's display malfunction.
+
+The video provides evidence of the functional prototype and the interaction achieved during testing.
+
+## C.9 User Testing
+
+The assignment requested testing with at least two participants who were not members of the development team.
+
+Our intended external testing was constrained by the limited number of students remaining in the classroom when the prototype became operational.
+
+During the available class time, we prioritized troubleshooting the hardware, establishing reliable multiplayer communication, and capturing a functional demonstration.
+
+As a result, we did not complete two independent non-team user-testing sessions.
+
+This is a limitation of our evaluation rather than evidence that the system has been validated with unfamiliar users.
+
+### Future User-Testing Plan
+
+A subsequent evaluation would involve two or more participants unfamiliar with NEON RACE.
+
+We would investigate:
+
+- **Expectations:** What do participants believe the game will require before receiving instructions?
+- **Challenge clarity:** Can participants understand the requested actions immediately?
+- **Sensor reliability:** Do the sensors recognize the intended actions consistently?
+- **Feedback:** Can players identify when they have completed a challenge and who won?
+- **Improvements:** What would participants change about the controls, timing, or game presentation?
+
+These observations would help distinguish implementation reliability from actual usability.
+
+## C.10 Reflection
+
+### What Worked Well?
+
+The most successful aspect of NEON RACE was turning independent Raspberry Pis into a shared multiplayer experience.
+
+The combination of physical sensor input, local computation, MQTT communication, and visual feedback created a more interactive demonstration than a conventional messaging test.
+
+The APDS-9960 also proved useful across multiple parts of the assignment, first contributing RGB measurements to the collaborative grid and then supporting physical game interactions.
+
+### What Were the Main Challenges?
+
+The largest challenge was coordinating several hardware and software components simultaneously.
+
+A device could successfully connect to MQTT while still encountering a problem with its camera, display, or sensor initialization.
+
+We encountered webcam initialization issues and a PiTFT malfunction that reduced the final demonstration from three participating Pis to two.
+
+These challenges reinforced the importance of testing individual subsystems before attempting full integration.
+
+### How Did Sensor Events Work?
+
+The Raspberry Pi collected physical input through its available sensors.
+
+The application interpreted these measurements locally to determine whether an interaction matched a game challenge.
+
+Relevant game events were then communicated through MQTT, allowing other devices to respond to the shared game state.
+
+This approach reduced the need to transmit raw camera imagery between devices.
+
+### Where Did Computation Happen, and Why?
+
+Sensor acquisition and interpretation occurred locally on the Raspberry Pis.
+
+Multiplayer coordination used MQTT messaging, allowing the devices to communicate without directly sharing raw sensor streams.
+
+This division supported a more modular architecture, where each Raspberry Pi was responsible for interpreting its own physical environment.
+
+The design also supported privacy by keeping camera frames on the local device rather than transmitting them through MQTT.
+
+### What Would We Improve?
+
+Our first priority would be restoring reliable three-device participation and testing the complete intended configuration.
+
+Additional improvements would include more robust camera detection, better sensor calibration across different lighting conditions, clearer connection-status feedback, and improved recovery when a device disconnects.
+
+We would also conduct structured external user testing to determine whether the game is intuitive for people unfamiliar with its implementation.
+
+For a competitive reaction game, it would be valuable to investigate the effects of MQTT latency and differences in sensor processing time on round outcomes.
+
+## C.11 Team Collaboration and AI Assistance
+
+NEON RACE was developed collaboratively, with team members contributing to the concept, implementation, integration, and testing.
+
+The project incorporated team-generated Python code and iterative troubleshooting across the participating Raspberry Pis.
+
+AI assistance was used during development for brainstorming, understanding MQTT architecture, preparing setup instructions, troubleshooting Python environments and hardware initialization, and organizing documentation.
+
+The final hardware testing and recorded multiplayer demonstration were performed by the team.
+
 ---
 
-## Troubleshooting
+# Final Deliverables
 
-**MQTT:** Broker `farlab.infosci.cornell.edu:1883`, user `idd`, pass `device@theFarm`
+| Deliverable | Documentation |
+|---|---|
+| Part A: MQTT publisher and subscriber | [MQTT test screenshots](https://github.com/jjs564-gif/Interactive-Lab-Hub/tree/Fall2026/Lab%206/media/mqtt_tests/) |
+| Part B: Collaborative pixel grid | [Sensor and grid images](https://github.com/jjs564-gif/Interactive-Lab-Hub/tree/Fall2026/Lab%206/media/part_b_images/) |
+| Part C: NEON RACE source code | [Python implementation](https://github.com/jjs564-gif/Interactive-Lab-Hub/blob/Fall2026/Lab%206/media/neon_race/code/neon_race.py) |
+| Part C: Python dependencies | [Requirements](https://github.com/jjs564-gif/Interactive-Lab-Hub/blob/Fall2026/Lab%206/media/neon_race/code/requirements-neon.txt) |
+| Part C: Multiplayer video | [Video demonstration](https://drive.google.com/file/d/11VT5Zs120NAuV9nys2I1SqoBgyaAqhUp/view?usp=sharing) |
 
-**Sensor:** Check `i2cdetect -y 1`, APDS-9960 at `0x39`
+## Conclusion
 
-**Grid:** Verify server running, check MQTT in console, test with web controller
+Lab 6 demonstrated how multiple Raspberry Pis can communicate and coordinate physical interactions using MQTT.
 
-**Pi venv:** Make sure to activate: `source .venv/bin/activate`
+We progressed from a simple publish/subscribe test to a collaborative color-sensing grid, and finally to NEON RACE, a multiplayer reaction game combining local sensing with distributed communication.
 
+The final two-player demonstration showed the potential of the system while revealing practical challenges associated with coordinating multiple hardware devices.
 
----
-
-## Submission Checklist
-
-Before submitting:
-- [ ] Delete prep/instructions above
-- [ ] Add YOUR project documentation
-- [ ] Include photos/videos/diagrams  
-- [ ] Document user testing with non-team members
-- [ ] Add reflection on learnings
-- [ ] List team names at top
-
-**Your README = story of what YOU built!**
-
----
+The project strengthened our understanding of publish/subscribe communication, distributed computation, physical interaction design, and the importance of robust hardware integration.
 
 Resources: [MQTT Guide](https://www.hivemq.com/mqtt-essentials/) | [Paho Python](https://www.eclipse.org/paho/index.php?page=clients/python/docs/index.php) | [Flask-SocketIO](https://flask-socketio.readthedocs.io/)
